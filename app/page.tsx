@@ -246,6 +246,10 @@ export default function HomePage() {
     setVisibleProjectsCount(prevCount => prevCount + 5)
   }
 
+  const handleShowLess = () => {
+    setVisibleProjectsCount(5)
+  }
+
   const visibleProjects = filteredProjects.slice(0, visibleProjectsCount)
 
   return (
@@ -439,16 +443,24 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          {visibleProjectsCount < filteredProjects.length && (
-            <div className="text-center mt-8">
+          <div className="text-center mt-8">
+            {visibleProjectsCount < filteredProjects.length && (
               <button
                 onClick={handleShowMore}
                 className="px-6 py-3 rounded-corners neu-button text-sm dark:bg-gray-700 dark:text-white"
               >
                 Show More
               </button>
-            </div>
-          )}
+            )}
+            {visibleProjectsCount > 5 && (
+              <button
+                onClick={handleShowLess}
+                className="px-6 py-3 rounded-corners neu-button text-sm dark:bg-gray-700 dark:text-white ml-4"
+              >
+                Show Less
+              </button>
+            )}
+          </div>
         </section>
 
         <section id="resume" ref={resumeRef} className="py-12">

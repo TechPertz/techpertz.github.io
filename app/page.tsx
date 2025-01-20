@@ -127,7 +127,7 @@ export default function HomePage() {
         <section id="home" ref={homeRef} className="min-h-screen flex flex-col justify-center">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl font-bold dark:text-white">Reet Nandy, SDE+AI</h1>
-            <h2 className="text-2xl md:text-3xl font-semibold dark:text-gray-300">MS in CS, NYU</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold dark:text-gray-300">MS CS, NYU</h2>
             <p className="text-md text-gray-500 dark:text-gray-400">
               <Link href="/secret-page" className="text-blue-500 hover:underline">
                 Interested to see how I look? Click here :)

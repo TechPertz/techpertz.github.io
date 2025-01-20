@@ -126,22 +126,23 @@ export default function HomePage() {
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <section id="home" ref={homeRef} className="min-h-screen flex flex-col justify-center">
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl font-bold dark:text-white">Reet Nandy</h1>
-            <h2 className="text-2xl md:text-3xl font-semibold dark:text-gray-300">SDE + AI</h2>
+            <h1 className="text-4xl md:text-5xl font-bold dark:text-white">Reet Nandy, SDE+AI</h1>
+            <h2 className="text-2xl md:text-3xl font-semibold dark:text-gray-300">MS in CS, NYU</h2>
             <p className="text-md text-gray-500 dark:text-gray-400">
-              <Link href="/secret-page" className="hover:underline">
+              <Link href="/secret-page" className="text-blue-500 hover:underline">
                 Interested to see how I look? Click here :)
               </Link>
             </p>
             <p className="text-gray-600 dark:text-gray-300 text-lg md:text-xl">
-              I see a problem. I code to solve it. <br /> FullStack? Core/Infra? AI? <br /> I'm in! I Learn. I Implement.<br />
+              I believe in solving problems. <br /> 
+              FullStack? Core/Infra? AI? <br /> I'm in! I Learn. I Implement.<br />
               <Link href="#skills" className="text-blue-500 hover:underline">
                 All my Technical Skills: Here.
               </Link><br /><br />
               <b>Currently</b>, looking for <u>SDE/AI</u> Spring '25 internship and May'25 full-time opportunities. <br />
-              <b>Prev</b>, building Pricing Engine @ Mobility Intelligence, NYC. <br /><br />
-              <a href="mailto:reet.nandy@nyu.edu" className="text-blue-500 hover:underline">
-                reet.nandy@nyu.edu
+              <br /><b>Prev</b>, building Pricing Engine @ Mobility Intelligence, NYC. <br /><br />
+              <a href="mailto:rn2528@nyu.edu" className="text-blue-500 hover:underline">
+                rn2528@nyu.edu
               </a>
               {' | '}
               <a href="tel:+15189306116" className="text-blue-500 hover:underline">

@@ -21,9 +21,9 @@ const Footer = () => {
           <p className="text-gray-600 dark:text-gray-300">
             Made with ❤️ by Reet Nandy
           </p>
-          <p className="text-gray-600 dark:text-gray-300">
+          {/* <p className="text-gray-600 dark:text-gray-300">
             This site has been made using Next.js and Tailwind CSS.
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>

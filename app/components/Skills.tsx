@@ -8,7 +8,7 @@ interface SkillCategory {
 const skillCategories: SkillCategory[] = [
   {
     name: 'Languages',
-    skills: ['Python', 'C/C++', 'Java', 'SQL', 'JS//TS', 'GoLang']
+    skills: ['Python', 'C/C++', 'Java', 'SQL', 'JS/TS', 'GoLang']
   },
   {
     name: 'Backend',

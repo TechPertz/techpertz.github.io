@@ -77,7 +77,7 @@ const Header = ({ activeSection }: HeaderProps) => {
                 key={item.label}
                 href={item.path}
                 onClick={(e) => handleClick(e, item.path)}
-                className={`px-3 py-2 rounded-md text-sm ${
+                className={`px-3 py-2 rounded-md text-sm rounded-corners ${
                   activeSection === item.label.toLowerCase() ? 'bg-gray-200 dark:bg-gray-700' : 'hover:bg-gray-100 dark:hover:bg-gray-700'
                 }`}
               >
@@ -106,7 +106,7 @@ const Header = ({ activeSection }: HeaderProps) => {
                   key={item.label}
                   href={item.path}
                   onClick={(e) => handleClick(e, item.path)}
-                  className={`block px-3 py-2 rounded-md text-base ${
+                  className={`block px-3 py-2 rounded-md text-base rounded-corners ${
                     activeSection === item.label.toLowerCase() ? 'bg-gray-200 dark:bg-gray-700' : 'hover:bg-gray-100 dark:hover:bg-gray-700'
                   }`}
                 >

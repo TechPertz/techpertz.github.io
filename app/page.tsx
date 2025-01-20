@@ -9,13 +9,33 @@ import Skills from './components/Skills'
 import PopUp from './components/PopUp'
 import Footer from './components/Footer'
 
-const projects = [
+// Define project and experience types
+interface Project {
+  id: string;
+  code: string;
+  title: string;
+  description: string;
+  tags: string[];
+  domain: string;
+  link: string;
+}
+
+interface Experience {
+  company: string;
+  title: string;
+  period: string;
+  techStack: string[];
+  responsibilities: string[];
+}
+
+const projects: Project[] = [
   { 
     id: 'LLM',
     code: 'LLM',
     title: 'AI Agent that reads all your emails and updates your calendar',
     description: 'Developed an open-source app that reads communication from gmail, slack, trello and automatically updates your calendar.',
     tags: ['Python', 'Flask', 'Postgres', 'ReactJs'],
+    domain: 'AI',
     link: 'https://github.com/yourusername/LLM-application'
   },
   {
@@ -24,6 +44,7 @@ const projects = [
     title: 'Performance Optimization and Analysis of Disk I/O in a Real Linux Environment',
     description: 'Achieved a 500% enhancement in cached reads and a 150% boost in non-cached reads, elevating read speeds from the local setup of 2500 MiB/s to 15000 MiB/s on a block size of 65536 bytes.',
     tags: ['C++', 'Linux', 'Shell', 'Git'],
+    domain: 'Backend',
     link: 'https://github.com/yourusername/Disk-IO-Optimization'
   },
   {
@@ -32,7 +53,99 @@ const projects = [
     title: 'Fitness Analytics Dashboard',
     description: 'Architected AWS services to host a Flask application on EC2 providing seamless integration with Google Fit metrics.',
     tags: ['Python', 'Django', 'Postgres', 'DynamoDB', 'EC2', 'Sagemaker', 'SNS', 'SQS', 'ReactJs'],
+    domain: 'Full Stack',
     link: 'https://github.com/yourusername/Fitness-Analytics-Dashboard'
+  },
+  // Dummy projects
+  {
+    id: 'DP1',
+    code: 'DP1',
+    title: 'Dummy Project 1',
+    description: 'This is a dummy project for testing purposes.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    domain: 'Frontend',
+    link: 'https://github.com/yourusername/dummy-project-1'
+  },
+  {
+    id: 'DP2',
+    code: 'DP2',
+    title: 'Dummy Project 2',
+    description: 'This is another dummy project for testing purposes.',
+    tags: ['Python', 'Django'],
+    domain: 'Backend',
+    link: 'https://github.com/yourusername/dummy-project-2'
+  },
+  {
+    id: 'DP3',
+    code: 'DP3',
+    title: 'Dummy Project 3',
+    description: 'This is yet another dummy project for testing purposes.',
+    tags: ['React', 'Node.js'],
+    domain: 'Full Stack',
+    link: 'https://github.com/yourusername/dummy-project-3'
+  },
+  {
+    id: 'DP4',
+    code: 'DP4',
+    title: 'Dummy Project 4',
+    description: 'This is a dummy project for testing purposes.',
+    tags: ['AWS', 'Docker'],
+    domain: 'Cloud',
+    link: 'https://github.com/yourusername/dummy-project-4'
+  },
+  {
+    id: 'DP5',
+    code: 'DP5',
+    title: 'Dummy Project 5',
+    description: 'This is another dummy project for testing purposes.',
+    tags: ['Kubernetes', 'CI/CD'],
+    domain: 'DevOps',
+    link: 'https://github.com/yourusername/dummy-project-5'
+  },
+  {
+    id: 'DP6',
+    code: 'DP6',
+    title: 'Dummy Project 6',
+    description: 'This is yet another dummy project for testing purposes.',
+    tags: ['Machine Learning', 'Python'],
+    domain: 'AI',
+    link: 'https://github.com/yourusername/dummy-project-6'
+  },
+  {
+    id: 'DP7',
+    code: 'DP7',
+    title: 'Dummy Project 7',
+    description: 'This is a dummy project for testing purposes.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    domain: 'Frontend',
+    link: 'https://github.com/yourusername/dummy-project-7'
+  },
+  {
+    id: 'DP8',
+    code: 'DP8',
+    title: 'Dummy Project 8',
+    description: 'This is another dummy project for testing purposes.',
+    tags: ['Python', 'Django'],
+    domain: 'Backend',
+    link: 'https://github.com/yourusername/dummy-project-8'
+  },
+  {
+    id: 'DP9',
+    code: 'DP9',
+    title: 'Dummy Project 9',
+    description: 'This is yet another dummy project for testing purposes.',
+    tags: ['React', 'Node.js'],
+    domain: 'Full Stack',
+    link: 'https://github.com/yourusername/dummy-project-9'
+  },
+  {
+    id: 'DP10',
+    code: 'DP10',
+    title: 'Dummy Project 10',
+    description: 'This is a dummy project for testing purposes.',
+    tags: ['AWS', 'Docker'],
+    domain: 'Cloud',
+    link: 'https://github.com/yourusername/dummy-project-10'
   }
 ]
 
@@ -80,21 +193,31 @@ const updates = [
   { id: 5, date: '2023-06-28', title: 'Attended tech conference', content: 'Participated in a major tech conference, attending workshops on emerging technologies and networking with industry professionals.' },
 ]
 
+const domains = ['Frontend', 'Backend', 'Full Stack', 'Cloud', 'DevOps', 'AI']
+
+const domainHierarchy: { [key: string]: string[] } = {
+  'Frontend': ['Frontend'],
+  'Backend': ['Backend', 'Full Stack'],
+  'Full Stack': ['Full Stack'],
+  'Cloud': ['Cloud'],
+  'DevOps': ['DevOps'],
+  'AI': ['AI']
+}
+
 export default function HomePage() {
   const [activeSection, setActiveSection] = useState('')
-  const homeRef = useRef(null)
-  const aboutRef = useRef(null)
-  const experienceRef = useRef(null)
-  const projectsRef = useRef(null)
-  const resumeRef = useRef(null)
-  const skillsRef = useRef(null)
+  const homeRef = useRef<HTMLElement>(null)
+  const aboutRef = useRef<HTMLElement>(null)
+  const experienceRef = useRef<HTMLElement>(null)
+  const projectsRef = useRef<HTMLElement>(null)
+  const resumeRef = useRef<HTMLElement>(null)
+  const skillsRef = useRef<HTMLElement>(null)
 
-  const [selectedTags, setSelectedTags] = useState<string[]>([])
+  const [selectedDomains, setSelectedDomains] = useState<string[]>([])
+  const [visibleProjectsCount, setVisibleProjectsCount] = useState(5)
 
-  const allTags = Array.from(new Set(projects.flatMap(project => project.tags)))
-
-  const filteredProjects = selectedTags.length > 0
-    ? projects.filter(project => selectedTags.some(tag => project.tags.includes(tag)))
+  const filteredProjects = selectedDomains.length > 0
+    ? projects.filter(project => selectedDomains.some(domain => domainHierarchy[domain].includes(project.domain)))
     : projects
 
   const showPopUp = true //  pop-up
@@ -118,6 +241,12 @@ export default function HomePage() {
 
     return () => observer.disconnect()
   }, [])
+
+  const handleShowMore = () => {
+    setVisibleProjectsCount(prevCount => prevCount + 5)
+  }
+
+  const visibleProjects = filteredProjects.slice(0, visibleProjectsCount)
 
   return (
     <>
@@ -260,25 +389,28 @@ export default function HomePage() {
 
         <section id="projects" ref={projectsRef} className="py-12">
           <h2 className="text-3xl font-bold mb-6 dark:text-white">Projects</h2>
+          <p className="mb-4 dark:text-gray-300">
+            Showing {visibleProjects.length} of {filteredProjects.length} projects
+          </p>
           <div className="flex flex-wrap gap-2 mb-8">
-            {allTags.map(tag => (
+            {domains.map(domain => (
               <button
-                key={tag}
-                onClick={() => setSelectedTags(prev => 
-                  prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+                key={domain}
+                onClick={() => setSelectedDomains(prev => 
+                  prev.includes(domain) ? prev.filter(d => d !== domain) : [...prev, domain]
                 )}
                 className={`px-4 py-2 rounded-lg text-sm ${
-                  selectedTags.includes(tag) 
+                  selectedDomains.includes(domain) 
                     ? 'neu-button shadow-inner dark:bg-gray-600' 
                     : 'neu-button dark:bg-gray-700'
                 }`}
               >
-                {tag}
+                {domain}
               </button>
             ))}
           </div>
           <div className="space-y-8">
-            {filteredProjects.map((project, index) => (
+            {visibleProjects.map((project, index) => (
               <div 
                 key={project.code} 
                 className={`neu-card p-6 rounded-corners dark:bg-gray-700 dark:text-white ${index === 0 ? 'border-2 border-blue-500 dark:border-blue-400' : ''}`}
@@ -307,6 +439,16 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          {visibleProjectsCount < filteredProjects.length && (
+            <div className="text-center mt-8">
+              <button
+                onClick={handleShowMore}
+                className="px-6 py-3 rounded-corners neu-button text-sm dark:bg-gray-700 dark:text-white"
+              >
+                Show More
+              </button>
+            </div>
+          )}
         </section>
 
         <section id="resume" ref={resumeRef} className="py-12">

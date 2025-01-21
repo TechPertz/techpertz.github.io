@@ -196,7 +196,7 @@ const updates = [
 const domains = ['Frontend', 'Backend', 'Full Stack', 'Cloud', 'DevOps', 'AI']
 
 const domainHierarchy: { [key: string]: string[] } = {
-  'Frontend': ['Frontend'],
+  'Frontend': ['Frontend', 'Full Stack'],
   'Backend': ['Backend', 'Full Stack'],
   'Full Stack': ['Full Stack'],
   'Cloud': ['Cloud'],
@@ -220,7 +220,7 @@ export default function HomePage() {
     ? projects.filter(project => selectedDomains.some(domain => domainHierarchy[domain].includes(project.domain)))
     : projects
 
-  const showPopUp = true //  pop-up
+  const showPopUp = false //  pop-up
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -247,6 +247,11 @@ export default function HomePage() {
   }
 
   const handleShowLess = () => {
+    setVisibleProjectsCount(5)
+  }
+
+  const handleClearFilter = () => {
+    setSelectedDomains([])
     setVisibleProjectsCount(5)
   }
 
@@ -412,6 +417,14 @@ export default function HomePage() {
                 {domain}
               </button>
             ))}
+            {selectedDomains.length > 0 && (
+              <button
+                onClick={handleClearFilter}
+                className="px-4 py-2 rounded-lg text-sm neu-button dark:bg-gray-700 ml-4"
+              >
+                Clear Filter
+              </button>
+            )}
           </div>
           <div className="space-y-8">
             {visibleProjects.map((project, index) => (

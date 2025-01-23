@@ -24,6 +24,7 @@ interface Experience {
   company: string;
   title: string;
   period: string;
+  location: string; // Add location field
   techStack: string[];
   responsibilities: string[];
 }
@@ -155,6 +156,7 @@ const experiences = {
       company: "Mobility Intelligence",
       title: "Backend Developer Intern (AI)",
       period: "June 2024 - Present",
+      location: "New York, NY", // Add location
       techStack: ["Python", "SQL", "Apache Airflow", "Flask"],
       responsibilities: [
         "Designed Python/SQL ETL pipelines with Apache Airflow, boosting data ingestion speed by 30% and ensuring reliability with automated validation",
@@ -166,6 +168,7 @@ const experiences = {
       company: "Defence Research & Development Organisation (Govt. of India)",
       title: "Software Engineering Intern (R&D)",
       period: "January 2023 - June 2023",
+      location: "Hyderabad, India", // Add location
       techStack: ["Python", "Shell", "PyQT", "MatPlotLib", "SerialPy", "SQL", "Docker"],
       responsibilities: [
         "Advised the Assistant Director of the Lab as the sole selected intern from a team of 20+, leading a project on heavy vehicle integrity estimation using LIDAR and GPS sensors",
@@ -176,6 +179,7 @@ const experiences = {
       company: "Solar Industries India Ltd",
       title: "Software Engineering Intern (Backend)",
       period: "April 2022 - December 2022",
+      location: "Nagpur, India", // Add location
       techStack: ["Django", "FastAPI", "AWS", "Docker", "Jenkins", "Kafka", "Redis", "Elasticsearch"],
       responsibilities: [
         "Led a team of 5 interns to automate manual tasks across 25+ industrial plants, introducing 5 Python-based projects and deploying 75,000+ lines of production code",
@@ -227,11 +231,15 @@ export default function HomePage() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            // Extract the section name without the '#' and set it as active
             setActiveSection(entry.target.id)
           }
         })
       },
-      { threshold: 0.5 }
+      { 
+        rootMargin: '-80px 0px -20% 0px', // Adjust rootMargin to account for header
+        threshold: 0.2 // Lower threshold for better detection
+      }
     )
 
     const refs = [homeRef, aboutRef, skillsRef, experienceRef, projectsRef, resumeRef]
@@ -240,6 +248,26 @@ export default function HomePage() {
     })
 
     return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    const path = window.location.pathname.replace('/', '')
+    if (path) {
+      const element = document.getElementById(path)
+      if (element) {
+        const headerOffset = 80
+        const elementPosition = element.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        })
+
+        // Update URL with hash
+        window.history.pushState(null, '', `/#${path}`)
+      }
+    }
   }, [])
 
   const handleShowMore = () => {
@@ -264,23 +292,23 @@ export default function HomePage() {
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <section id="home" ref={homeRef} className="min-h-screen flex flex-col justify-center">
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl font-bold dark:text-white">Reet Nandy, SDE+AI</h1>
-            <h2 className="text-2xl md:text-3xl font-semibold dark:text-gray-300">MS CS, NYU</h2>
+            <h1 className="text-4xl md:text-5xl font-bold dark:text-white">Reet Nandy, MS</h1>
+            <h2 className="text-2xl md:text-3xl font-semibold dark:text-gray-300">Software + AI</h2>
             <p className="text-md text-gray-500 dark:text-gray-400">
               <Link href="/secret-page" className="text-blue-500 hover:underline">
                 Interested to see how I look? Click here :)
               </Link>
             </p>
             <p className="text-gray-600 dark:text-gray-300 text-lg md:text-xl">
-              I believe in solving problems. <br /> 
-              FullStack? Core/Infra? AI? <br /> I'm in! I Learn. I Implement.<br />
+              I love to solve problems. <br /> 
+              FullStack? AI? Core/Infra?<br /> I'm in! I Learn. I Implement.<br />
               <Link href="#skills" className="text-blue-500 hover:underline">
                 All my Technical Skills: Here.
               </Link><br /><br />
               <b>Currently</b>, looking for <u>SDE/AI</u> Spring '25 internship and May'25 full-time opportunities. <br />
-              <br /><b>Prev</b>, building Pricing Engine @ Mobility Intelligence, NYC. <br /><br />
-              <a href="mailto:rn2528@nyu.edu" className="text-blue-500 hover:underline">
-                rn2528@nyu.edu
+              <br /><b>Prev</b>, building AI Pricing Engine @ Mobility Intelligence, NYC. <br /><br />
+              <a href="mailto:reet.nandy@nyu.edu" className="text-blue-500 hover:underline">
+                reet.nandy@nyu.edu
               </a>
               {' | '}
               <a href="tel:+15189306116" className="text-blue-500 hover:underline">
@@ -327,7 +355,7 @@ export default function HomePage() {
             </div>
             <div className="md:w-2/3">
               <p className="mb-4">
-                Hi, I'm Reet Nandy, a Software Engineer with 2+ years of internship experience in cloud-native development, DevOps, and AI/ML. Skilled in building scalable backend infrastructure and high-performance systems, and developing and deploying machine learning models. Focused on leveraging distributed systems to enhance scalability and efficiency, while staying updated with emerging trends in AI and automation.
+                Hi, I'm Reet Nandy, a Software Engineer with 2+ years of internship experience in <span className="highlight">cloud-native development</span>, <span className="highlight">DevOps</span>, and <span className="highlight">AI/ML</span>. Skilled in building scalable backend infrastructure and high-performance systems, and developing and deploying machine learning models. Focused on leveraging distributed systems to enhance scalability and efficiency, while staying updated with emerging trends in AI and automation.
               </p>
               <ul className="list-disc list-inside space-y-2 mb-4">
                 <li>Expertise in back-end development with Python and Node.js</li>
@@ -366,12 +394,11 @@ export default function HomePage() {
           <div className="space-y-8">
             {experiences.technical.map((exp, index) => (
               <div key={index} className="neu-card p-6 dark:bg-gray-800">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold dark:text-white">{exp.company}</h3><br />
-                    <p className="text-lg text-gray-600 dark:text-white">{exp.title}</p>
-                  </div>
+                <div className="flex flex-col mb-4">
+                  <h3 className="text-xl font-semibold dark:text-white">{exp.company}</h3><br />
+                  <p className="text-lg text-gray-600 dark:text-white">{exp.title}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400">{exp.period}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{exp.location}</p> {/* Display location */}
                 </div>
                 <div className="mb-4">
                   <h4 className="text-sm font-semibold mb-2 dark:text-white">Tech Stack:</h4>
@@ -432,13 +459,13 @@ export default function HomePage() {
                 key={project.code} 
                 className={`neu-card p-6 rounded-corners dark:bg-gray-700 dark:text-white ${index === 0 ? 'border-2 border-blue-500 dark:border-blue-400' : ''}`}
               >
-                <div className="flex justify-between items-center mb-2">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
                   <h3 className="text-lg font-medium mb-1">
                     {project.title}
                   </h3>
                   <a
                     href={project.link}
-                    className="px-3 py-1 rounded-corners neu-button text-sm dark:bg-gray-600"
+                    className="px-3 py-1 mt-2 md:mt-0 rounded-corners neu-button text-sm dark:bg-gray-600"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

@@ -118,3 +118,10 @@ body {
   filter: blur(5px) brightness(0.7);
 }
 
+.highlight {
+  background-color: #add8e6; /* Light blue */
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+  color: #000000; /* Ensure text is visible in dark mode */
+}
+

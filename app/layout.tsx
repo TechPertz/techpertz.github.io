@@ -1,12 +1,13 @@
 import './globals.css'
 import { JetBrains_Mono } from 'next/font/google'
 import type { Metadata } from 'next'
+import DynamicFavicon from './components/DynamicFavicon'
 
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Reet Nandy | Software Developer',
-  description: 'Portfolio of Reet Nandy, a passionate software developer',
+  title: 'Reet Nandy | SWE+AI',
+  description: 'Portfolio of Reet Nandy, a passionate software + AI developer',
 }
 
 export default function RootLayout({
@@ -16,7 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/light.ico" /> {/* Default favicon */}
+      </head>
       <body className={`${jetbrainsMono.className} min-h-screen dark:bg-gray-900`}>
+        <DynamicFavicon />
         {children}
       </body>
     </html>

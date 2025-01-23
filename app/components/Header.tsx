@@ -13,12 +13,12 @@ const Header = ({ activeSection }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false)
 
   const navItems = [
-    { label: 'Home', path: '#home' },
-    { label: 'About', path: '#about' },
-    { label: 'Skills', path: '#skills' },
-    { label: 'Experience', path: '#experience' },
-    { label: 'Projects', path: '#projects' },
-    { label: 'Resume', path: '#resume' }
+    { label: 'Home', path: '/#home' },
+    { label: 'About', path: '/#about' },
+    { label: 'Skills', path: '/#skills' },
+    { label: 'Experience', path: '/#experience' },
+    { label: 'Projects', path: '/#projects' },
+    { label: 'Resume', path: '/#resume' }
   ]
 
   useEffect(() => {
@@ -27,24 +27,8 @@ const Header = ({ activeSection }: HeaderProps) => {
     }
 
     window.addEventListener('scroll', handleScroll)
+    handleScroll() // Invoke on mount to set initial state
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  useEffect(() => {
-    const path = window.location.pathname.replace('/', '')
-    if (path) {
-      const element = document.getElementById(path)
-      if (element) {
-        const headerOffset = 80
-        const elementPosition = element.getBoundingClientRect().top
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        })
-      }
-    }
   }, [])
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
@@ -66,6 +50,12 @@ const Header = ({ activeSection }: HeaderProps) => {
     }
   }
 
+  const isActive = (path: string) => {
+    // Remove '#' from path and compare with activeSection
+    const section = path.replace('#', '')
+    return section === activeSection
+  }
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white dark:bg-gray-800 shadow-md' : ''}`}>
       <nav className="container mx-auto px-6 py-4 md:py-6">
@@ -77,8 +67,10 @@ const Header = ({ activeSection }: HeaderProps) => {
                 key={item.label}
                 href={item.path}
                 onClick={(e) => handleClick(e, item.path)}
-                className={`px-3 py-2 rounded-md text-sm rounded-corners ${
-                  activeSection === item.label.toLowerCase() ? 'bg-gray-200 dark:bg-gray-700' : 'hover:bg-gray-100 dark:hover:bg-gray-700'
+                className={`px-3 py-2 rounded-md text-sm rounded-corners transition-colors duration-200 ${
+                  isActive(item.path) 
+                    ? 'bg-gray-200 dark:bg-gray-700 font-medium' 
+                    : 'hover:bg-gray-100 dark:hover:bg-gray-700'
                 }`}
               >
                 {item.label}
@@ -91,6 +83,7 @@ const Header = ({ activeSection }: HeaderProps) => {
             <button
               className="z-50"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
             >
               <svg className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M4 6h16M4 12h16M4 18h16"></path>
@@ -106,8 +99,10 @@ const Header = ({ activeSection }: HeaderProps) => {
                   key={item.label}
                   href={item.path}
                   onClick={(e) => handleClick(e, item.path)}
-                  className={`block px-3 py-2 rounded-md text-base rounded-corners ${
-                    activeSection === item.label.toLowerCase() ? 'bg-gray-200 dark:bg-gray-700' : 'hover:bg-gray-100 dark:hover:bg-gray-700'
+                  className={`block px-3 py-2 rounded-md text-base rounded-corners mb-2 transition-colors duration-200 ${
+                    isActive(item.path)
+                      ? 'bg-gray-200 dark:bg-gray-700 font-medium'
+                      : 'hover:bg-gray-100 dark:hover:bg-gray-700'
                   }`}
                 >
                   {item.label}

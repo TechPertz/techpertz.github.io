@@ -119,9 +119,9 @@ body {
 }
 
 .highlight {
-  background-color: #add8e6; /* Light blue */
+  background-color: rgb(226, 251, 233); 
   padding: 0.2rem;
   border-radius: 0.2rem;
-  color: #000000; /* Ensure text is visible in dark mode */
+  color: #000000; 
 }
 

@@ -31,8 +31,8 @@ interface Experience {
 
 const projects: Project[] = [
   { 
-    id: 'LLM',
-    code: 'LLM',
+    id: '1',
+    code: 'mAIgic',
     title: 'AI Agent that reads all your emails and updates your calendar',
     description: 'Developed an open-source app that reads communication from gmail, slack, trello and automatically updates your calendar.',
     tags: ['Python', 'Flask', 'Postgres', 'ReactJs'],
@@ -40,7 +40,7 @@ const projects: Project[] = [
     link: 'https://github.com/yourusername/LLM-application'
   },
   {
-    id: 'IO',
+    id: '2',
     code: 'IO',
     title: 'Performance Optimization and Analysis of Disk I/O in a Real Linux Environment',
     description: 'Achieved a 500% enhancement in cached reads and a 150% boost in non-cached reads, elevating read speeds from the local setup of 2500 MiB/s to 15000 MiB/s on a block size of 65536 bytes.',
@@ -49,9 +49,9 @@ const projects: Project[] = [
     link: 'https://github.com/yourusername/Disk-IO-Optimization'
   },
   {
-    id: 'FAD',
+    id: '3',
     code: 'FAD',
-    title: 'Fitness Analytics Dashboard',
+    title: 'AI-Fitness Analytics Dashboard',
     description: 'Architected AWS services to host a Flask application on EC2 providing seamless integration with Google Fit metrics.',
     tags: ['Python', 'Django', 'Postgres', 'DynamoDB', 'EC2', 'Sagemaker', 'SNS', 'SQS', 'ReactJs'],
     domain: 'Full Stack',
@@ -59,52 +59,52 @@ const projects: Project[] = [
   },
   // Dummy projects
   {
-    id: 'DP1',
+    id: '4',
     code: 'DP1',
-    title: 'Dummy Project 1',
+    title: 'Flowcontrol',
     description: 'This is a dummy project for testing purposes.',
     tags: ['HTML', 'CSS', 'JavaScript'],
     domain: 'Frontend',
     link: 'https://github.com/yourusername/dummy-project-1'
   },
   {
-    id: 'DP2',
+    id: '5',
     code: 'DP2',
-    title: 'Dummy Project 2',
+    title: 'KubeControl',
     description: 'This is another dummy project for testing purposes.',
     tags: ['Python', 'Django'],
     domain: 'Backend',
     link: 'https://github.com/yourusername/dummy-project-2'
   },
   {
-    id: 'DP3',
+    id: '6',
     code: 'DP3',
-    title: 'Dummy Project 3',
+    title: 'White board',
     description: 'This is yet another dummy project for testing purposes.',
     tags: ['React', 'Node.js'],
     domain: 'Full Stack',
     link: 'https://github.com/yourusername/dummy-project-3'
   },
   {
-    id: 'DP4',
+    id: '7',
     code: 'DP4',
-    title: 'Dummy Project 4',
+    title: 'Amazon Review',
     description: 'This is a dummy project for testing purposes.',
     tags: ['AWS', 'Docker'],
     domain: 'Cloud',
     link: 'https://github.com/yourusername/dummy-project-4'
   },
   {
-    id: 'DP5',
+    id: '8',
     code: 'DP5',
-    title: 'Dummy Project 5',
+    title: 'Telegram Checkout',
     description: 'This is another dummy project for testing purposes.',
     tags: ['Kubernetes', 'CI/CD'],
     domain: 'DevOps',
     link: 'https://github.com/yourusername/dummy-project-5'
   },
   {
-    id: 'DP6',
+    id: '9',
     code: 'DP6',
     title: 'Dummy Project 6',
     description: 'This is yet another dummy project for testing purposes.',
@@ -113,7 +113,7 @@ const projects: Project[] = [
     link: 'https://github.com/yourusername/dummy-project-6'
   },
   {
-    id: 'DP7',
+    id: '10',
     code: 'DP7',
     title: 'Dummy Project 7',
     description: 'This is a dummy project for testing purposes.',
@@ -122,7 +122,7 @@ const projects: Project[] = [
     link: 'https://github.com/yourusername/dummy-project-7'
   },
   {
-    id: 'DP8',
+    id: '11',
     code: 'DP8',
     title: 'Dummy Project 8',
     description: 'This is another dummy project for testing purposes.',
@@ -131,7 +131,7 @@ const projects: Project[] = [
     link: 'https://github.com/yourusername/dummy-project-8'
   },
   {
-    id: 'DP9',
+    id: '12',
     code: 'DP9',
     title: 'Dummy Project 9',
     description: 'This is yet another dummy project for testing purposes.',
@@ -140,7 +140,7 @@ const projects: Project[] = [
     link: 'https://github.com/yourusername/dummy-project-9'
   },
   {
-    id: 'DP10',
+    id: '13',
     code: 'DP10',
     title: 'Dummy Project 10',
     description: 'This is a dummy project for testing purposes.',
@@ -156,7 +156,7 @@ const experiences = {
       company: "Stealth AI Startup",
       title: "Backend Developer Intern (AI)",
       period: "June 2024 - Present",
-      location: "New York, NY", 
+      location: "New York City, USA", 
       techStack: ["Python", "SQL", "Apache Airflow", "Flask"],
       responsibilities: [
         "Designed Python/SQL ETL pipelines with Apache Airflow, boosting data ingestion speed by 30% and ensuring reliability with automated validation",
@@ -187,10 +187,10 @@ const experiences = {
       ]
     }, 
     {
-      company: "Univesidad De Ibague",
+      company: "Universidad De Ibague",
       title: "Technical Intern (Data Science)",
       period: "July 2020 - October 2020",
-      location: "Chennai, India", 
+      location: "Ibague, Colombia", 
       techStack: ["Java", "C++", "Python"],
       responsibilities: [
         "Assisted 100+ students in understanding complex data structures and algorithms, leading weekly lab sessions and grading assignments and exams",
@@ -317,14 +317,14 @@ export default function HomePage() {
         <section id="home" ref={homeRef} className="min-h-screen flex flex-col justify-center">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl font-bold dark:text-white">Reet Nandy, MS</h1>
-            <h2 className="text-2xl md:text-3xl font-semibold dark:text-gray-300">Software + AI</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold dark:text-gray-300">Software + AI Engineer</h2>
             <p className="text-md text-gray-500 dark:text-gray-400">
               <Link href="/secret-page" className="text-blue-500 hover:underline">
                 Interested to see how I look? Click here :)
               </Link>
             </p>
             <p className="text-gray-600 dark:text-gray-300 text-lg md:text-xl">
-              I love to solve problems. <br /> 
+              I believe in solving problems. <br /> 
               FullStack? AI? Core/Infra?<br /> I'm in! I Learn. I Implement.<br />
               <Link href="#skills" className="text-blue-500 hover:underline">
                 All my Technical Skills: Here.
@@ -379,7 +379,7 @@ export default function HomePage() {
             </div>
             <div className="md:w-2/3">
               <p className="mb-4">
-                Hi, I'm Reet Nandy, a Software Engineer with 2+ years of internship experience in <span className="highlight">cloud-native development</span>, <span className="highlight">DevOps</span>, and <span className="highlight">AI/ML</span>. Skilled in building scalable backend infrastructure and high-performance systems, and developing and deploying machine learning models. Focused on leveraging distributed systems to enhance scalability and efficiency, while staying updated with emerging trends in AI and automation.
+              Hi, I'm Reet Nandy, a Software + AI Engineer with <strong>3 years</strong> of in-depth internship experience specializing in <span className="highlight">Full Stack Development</span>, <span className="highlight">Cloud/DevOps infrastructure</span>, and <span className="highlight">AI/ML solutions</span>. <br />My expertise revolves around building scalable backend systems, optimizing performance, and deploying advanced AI models to enhance innovation and efficiency. I am committed to leveraging distributed systems to advance scalability and integrate cutting-edge technologies.
               </p>
               <ul className="list-disc list-inside space-y-2 mb-4">
                 <li>Expertise in back-end development with Python and Node.js</li>

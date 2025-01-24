@@ -15,7 +15,7 @@ export default function SecretPage() {
             height={300}
             className="rounded-corners mb-6"
           />
-          <p className="text-xl font-semibold mb-4">Why did u click bro? 🙈😜</p>
+          <p className="text-xl font-semibold mb-4">Why did u click bro? 👀👀</p>
           <Link href="/" className="text-blue-500 hover:underline">
             Go back home 
           </Link>

@@ -1,9 +1,8 @@
 import './globals.css'
-import { JetBrains_Mono } from 'next/font/google'
+import { Open_Sans } from 'next/font/google'
 import type { Metadata } from 'next'
-import DynamicFavicon from './components/DynamicFavicon'
 
-const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'] })
+const openSans = Open_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Reet Nandy | SWE+AI',
@@ -18,10 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/light.ico" /> {/* Default favicon */}
+        <link rel="icon" href="/favicon.ico" /> {/* Update favicon link to use the new favicon */}
       </head>
-      <body className={`${jetbrainsMono.className} min-h-screen dark:bg-gray-900`}>
-        <DynamicFavicon />
+      <body className={`${openSans.className} min-h-screen dark:bg-gray-900`}>
         {children}
       </body>
     </html>

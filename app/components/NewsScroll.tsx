@@ -18,15 +18,15 @@ const newsItems = [
   },
   { 
     id: 3, 
-    title: 'Built this Website', 
-    date: '11 Jan 2025',
-    content: 'Finally ended the procrastination and built myself a personal website. lol.'
-  },
-  { 
-    id: 4, 
     title: 'Madison Square Garden Office invitation, NYC', 
     date: '13 Jan 2025',
     content: 'Got selected to network with experts from Tech, Marketing, Events, Entertainment and HR Teams within MSG Entertainment at their NYC office. Never knew, MSG owns the Sphere in Las Vegas too.'
+  },
+  { 
+    id: 4, 
+    title: 'Built this Website', 
+    date: '24 Jan 2025',
+    content: 'Finally ended the procrastination and built myself a personal website. lol.'
   },
 ].reverse()
 

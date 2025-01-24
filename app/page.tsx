@@ -153,10 +153,10 @@ const projects: Project[] = [
 const experiences = {
   technical: [
     {
-      company: "Mobility Intelligence",
+      company: "Stealth AI Startup",
       title: "Backend Developer Intern (AI)",
       period: "June 2024 - Present",
-      location: "New York, NY", // Add location
+      location: "New York, NY", 
       techStack: ["Python", "SQL", "Apache Airflow", "Flask"],
       responsibilities: [
         "Designed Python/SQL ETL pipelines with Apache Airflow, boosting data ingestion speed by 30% and ensuring reliability with automated validation",
@@ -168,7 +168,7 @@ const experiences = {
       company: "Defence Research & Development Organisation (Govt. of India)",
       title: "Software Engineering Intern (R&D)",
       period: "January 2023 - June 2023",
-      location: "Hyderabad, India", // Add location
+      location: "Chandigarh, India", 
       techStack: ["Python", "Shell", "PyQT", "MatPlotLib", "SerialPy", "SQL", "Docker"],
       responsibilities: [
         "Advised the Assistant Director of the Lab as the sole selected intern from a team of 20+, leading a project on heavy vehicle integrity estimation using LIDAR and GPS sensors",
@@ -179,33 +179,57 @@ const experiences = {
       company: "Solar Industries India Ltd",
       title: "Software Engineering Intern (Backend)",
       period: "April 2022 - December 2022",
-      location: "Nagpur, India", // Add location
+      location: "Mumbai, India", 
       techStack: ["Django", "FastAPI", "AWS", "Docker", "Jenkins", "Kafka", "Redis", "Elasticsearch"],
       responsibilities: [
         "Led a team of 5 interns to automate manual tasks across 25+ industrial plants, introducing 5 Python-based projects and deploying 75,000+ lines of production code",
         "Optimized systems with 5 cross-functional teams to handle 100,000+ API requests across 20 endpoints, executing CRON operations on 2.5M rows/day within 1 sec using Cassandra, Kafka, and Postgres"
       ]
-    }
+    }, 
+    {
+      company: "Univesidad De Ibague",
+      title: "Technical Intern (Data Science)",
+      period: "July 2020 - October 2020",
+      location: "Chennai, India", 
+      techStack: ["Java", "C++", "Python"],
+      responsibilities: [
+        "Assisted 100+ students in understanding complex data structures and algorithms, leading weekly lab sessions and grading assignments and exams",
+        "Conducted 1-on-1 tutoring sessions for students struggling with concepts, resulting in a 20% increase in average quiz scores"
+      ]
+    },
+    {
+      company: "Shiva Systems and Technologies Pvt Ltd",
+      title: "Software Engineering Intern",
+      period: "May 2020 - June 2020",
+      location: "Mumbai, India", 
+      techStack: ["Linux", "C", "C++", "Python"],
+      responsibilities: [
+        "Guided 50+ students in understanding the core concepts of operating systems, conducting weekly lab sessions and grading assignments and exams",
+        "Hosted 1-on-1 tutoring sessions for students facing difficulties in understanding system calls and process management, resulting in a 15% increase in average quiz scores"
+      ],
+    },
+      {
+      company: "Freelancer / Contract Jobs",
+      title: "Full Stack AI Developer",
+      period: "January 2021 - June 2021",
+      location: "Chennai, India",
+      techStack: ["Linux", "C", "C++", "Python"],
+      responsibilities: [
+        "Guided 50+ students in understanding the core concepts of operating systems, conducting weekly lab sessions and grading assignments and exams",
+        "Hosted 1-on-1 tutoring sessions for students facing difficulties in understanding system calls and process management, resulting in a 15% increase in average"
+      ]
+      }
   ]
 }
 
-const updates = [
-  { id: 1, date: '2023-07-15', title: 'Started learning Rust', content: 'Began exploring Rust programming language to expand my systems programming skills.' },
-  { id: 2, date: '2023-07-10', title: 'Completed advanced React course', content: 'Finished an advanced React course on Frontend Masters, covering topics like performance optimization and advanced hooks.' },
-  { id: 3, date: '2023-07-05', title: 'Published blog on React Performance', content: 'Wrote and published a comprehensive blog post on "Optimizing React Performance" on my personal blog.' },
-  { id: 4, date: '2023-07-01', title: 'Contributed to open-source project', content: 'Made my first significant contribution to a popular open-source React library, implementing a new feature.' },
-  { id: 5, date: '2023-06-28', title: 'Attended tech conference', content: 'Participated in a major tech conference, attending workshops on emerging technologies and networking with industry professionals.' },
-]
-
-const domains = ['Frontend', 'Backend', 'Full Stack', 'Cloud', 'DevOps', 'AI']
+const domains = ['Frontend', 'Backend', 'AI', 'Full Stack', 'Cloud/DevOps', 'Full Stack']
 
 const domainHierarchy: { [key: string]: string[] } = {
   'Frontend': ['Frontend', 'Full Stack'],
   'Backend': ['Backend', 'Full Stack'],
+  'AI': ['AI'],
+  'Cloud/DevOps': ['Cloud/DevOps'],
   'Full Stack': ['Full Stack'],
-  'Cloud': ['Cloud'],
-  'DevOps': ['DevOps'],
-  'AI': ['AI']
 }
 
 export default function HomePage() {

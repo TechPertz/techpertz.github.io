@@ -34,7 +34,8 @@ const Header = ({ activeSection }: HeaderProps) => {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
     e.preventDefault()
     setIsMenuOpen(false)
-    const element = document.querySelector(path)
+    const elementId = path.replace('/#', '')
+    const element = document.getElementById(elementId)
     if (element) {
       const headerOffset = 80
       const elementPosition = element.getBoundingClientRect().top

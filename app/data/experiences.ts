@@ -16,8 +16,8 @@ export const experiences = {
         location: "New York City, USA", 
         techStack: ["Python", "SQL", "Apache Airflow", "Flask"],
         responsibilities: [
-          "Developed a Django-ReactJS platform integrating ML models, delivering real-time predictions with sub-1 second latency through optimized APIs.",
-          "Engineered ETL pipelines with Apache Airflow, processing 15M+ records daily and automating transformations, saving 3 man hours per dataset.",
+          "Developed a <b>Django-ReactJS</b> platform integrating ML models, delivering real-time predictions with <b>sub-1 second latency</b> through optimized APIs.",
+          "Engineered <b>ETL pipelines</b> with Apache Airflow, processing <b>15M+ records daily</b> and automating transformations, saving 3 man hours per dataset.",
           "Built regression models for price prediction, using TimeSeriesSplit and advanced tuning to reduce errors within ±5% over a 90-day horizon.",
           "Optimized PostgreSQL queries to support frequent API calls and large-scale workflows, improving data retrieval efficiency."
         ]
@@ -50,8 +50,8 @@ export const experiences = {
         company: "Freelancer / Contract Jobs",
         title: "Full Stack / AI Developer",
         period: "January 2022 - June 2022",
-        location: "Chennai, India",
-        techStack: ["Linux", "C", "C++", "Python"],
+        location: "Remote",
+        techStack: ["Python", "Django", "ReactJS", "PostgreSQL", "DigitalOcean", "VPS"],
         responsibilities: [
           "Developed full-stack applications for 3 US clients, including a web scraping toolkit, CRM dashboard, sentiment analysis on consumer data, e-commerce platform, and a chat-based ticketing system with an automated refund approval microservice integrated with a payment gateway.",
           "Deployed all projects on DigitalOcean Droplets (VPS), consistently completing them 1 week ahead of deadlines and achieving 100% client satisfaction."
@@ -59,13 +59,13 @@ export const experiences = {
         },
       {
         company: "Universidad De Ibague",
-        title: "Technical Intern (Data Science)",
+        title: "Technical Intern (Data)",
         period: "July 2020 - October 2020",
         location: "Ibague, Colombia", 
-        techStack: ["Java", "C++", "Python"],
+        techStack: ["Python", "ArcGIS", "Pandas", "NumPy"],
         responsibilities: [
-          "Assisted 100+ students in understanding complex data structures and algorithms, leading weekly lab sessions and grading assignments and exams",
-          "Conducted 1-on-1 tutoring sessions for students struggling with concepts, resulting in a 20% increase in average quiz scores"
+          "Optimized Python algorithms, reducing processing time for 100K entries from 19 seconds to 6 seconds through algorithmic optimization and complexity analysis.",
+          "Improved drought index accuracy by 10% and and streamlined geospatial data workflows using ArcGIS for analysis."
         ]
       },
       {
@@ -73,10 +73,10 @@ export const experiences = {
         title: "Software Engineering Intern",
         period: "May 2020 - June 2020",
         location: "Mumbai, India", 
-        techStack: ["Linux", "C", "C++", "Python"],
+        techStack: ["Python", "BeautifulSoup", "Pandas", "NumPy"],
         responsibilities: [
-          "Guided 50+ students in understanding the core concepts of operating systems, conducting weekly lab sessions and grading assignments and exams",
-          "Hosted 1-on-1 tutoring sessions for students facing difficulties in understanding system calls and process management, resulting in a 15% increase in average quiz scores"
+          "Developed Python scripts to scrape and generate 10 years of historical data (200K entries across 8 fields), automating a previously manual process.",
+          "Streamlined data processing workflows, reducing overall processing time by 60%, enabling faster analytics and decision-making."
         ],
       }
     ]

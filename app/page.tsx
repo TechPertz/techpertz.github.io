@@ -10,6 +10,7 @@ import PopUp from './components/PopUp'
 import Footer from './components/Footer'
 import { Project, projects, domains, domainHierarchy } from './data/projects'
 import { Experience, experiences } from './data/experiences'
+import FormattedText from './components/FormattedText'
 
 export default function HomePage() {
   const [activeSection, setActiveSection] = useState('')
@@ -119,7 +120,7 @@ export default function HomePage() {
                 All my Technical Skills: Here.
               </Link><br /><br />
               <b>Currently</b>, looking for <u>SDE/AI</u> Spring '25 internship and May'25 full-time opportunities. <br />
-              <br /><b>Prev</b>, building AI Pricing Engine @ Mobility Intelligence, NYC. <br /><br />
+              <br /><b>Prev</b>, building AI Pricing Engine @ Stealth AI Startup, NYC. <br /><br />
               <a href="mailto:reet.nandy@nyu.edu" className="text-blue-500 hover:underline">
                 reet.nandy@nyu.edu
               </a>
@@ -229,10 +230,10 @@ export default function HomePage() {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold mb-2 dark:text-white">Key Responsibilities:</h4>
-                  <ul className="list-disc custom-list space-y-2 dark:text-gray-100"> {/* Updated spacing and text color */}
+                  <ul className="list-disc custom-list space-y-2 dark:text-gray-100">
                     {exp.responsibilities.map((resp, i) => (
-                      <li key={i} className="text-base"> {/* Increased font size */}
-                        {resp}
+                      <li key={i} className="text-base">
+                        <FormattedText text={resp} />
                       </li>
                     ))}
                   </ul>
@@ -298,7 +299,7 @@ export default function HomePage() {
           <div className="space-y-8">
             {visibleProjects.map((project, index) => (
               <div 
-                key={project.code} 
+                key={index} 
                 className={`neu-card p-6 rounded-corners dark:bg-gray-800 dark:text-white ${index === 0 ? 'border-2 border-blue-500 dark:border-blue-400' : ''}`}
               >
                 <div className="flex flex-col mb-4">
@@ -327,7 +328,9 @@ export default function HomePage() {
                 </div>
                 <ul className="list-disc custom-list mb-2">
                   {project.description.map((desc, i) => (
-                    <li key={i}>{desc}</li>
+                    <li key={i}>
+                      <FormattedText text={desc} />
+                    </li>
                   ))}
                 </ul>
                 <div className="mb-2">

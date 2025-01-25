@@ -8,29 +8,30 @@ interface SkillCategory {
 const skillCategories: SkillCategory[] = [
   {
     name: 'Languages',
-    skills: ['Python', 'C/C++', 'Java', 'SQL', 'JS/TS', 'GoLang']
+    skills: ['Python', 'C/C++', 'Java', 'SQL', 'JS/TS', 'HTML/CSS']
   },
   {
     name: 'Backend',
-    skills: ['Django/Flask/FastAPI', 'Node.js/Express.js', 'Serverless Architecture']
+    skills: ['Django/Flask/FastAPI', 'Node.js', 'Spring Boot', 'Serverless', 'REST API', 'GraphQL']
   },
   {
     name: 'Frontend',
-    skills: ['Next.js', 'Flutter', 'React.js', 'Tailwind CSS']
+    skills: ['React.js', 'Next.js', 'Tailwind CSS', 'PyQT', 'Java Swing', 'Flutter']
   },
   {
     name: 'Database',
-    skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Elasticsearch']
+    skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Pinecone', 'Elasticsearch', 'DynamoDB', 'Cassandra']
   },
   {
     name: 'DevOps/Cloud',
-    skills: ['AWS', 'Docker', 'Kubernetes', 'CI/CD', 'Jenkins']
+    skills: ['AWS', 'Docker', 'Kubernetes', 'CI/CD', 'Jenkins', 'Airflow', 'Prometheus', 'Kafka']
   },
   {
-    name: 'Other',
-    skills: ['Git', 'RESTful APIs', 'GraphQL', 'Agile/Scrum', 'Machine Learning']
+    name: 'AI/ML',
+    skills: ['Scikit-learn', 'TensorFlow', 'PyTorch', 'MLFlow', 'LLMs', 'RAG', 'VectorDB']
   }
-]
+];
+
 
 const Skills: FC = () => {
   return (

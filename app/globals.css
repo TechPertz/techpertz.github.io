@@ -18,6 +18,29 @@
   --neu-shadow-inset: inset 3px 3px 6px #0f1319, inset -3px -3px 6px #252d3f, inset 3px -3px 6px #0f1319, inset -3px 3px 6px #252d3f;
 }
 
+.dark strong,
+.dark b,
+.dark .font-bold,
+.dark .font-semibold {
+  font-weight: 700; /* Increase from default */
+  letter-spacing: 0.01em; /* Slightly increase letter spacing */
+  color: #ffffff; /* Pure white for better contrast */
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.1); /* Subtle text shadow for better readability */
+}
+
+.dark h1,
+.dark h2,
+.dark h3 {
+  font-weight: 800; /* Even stronger for headings */
+  color: #ffffff;
+}
+
+/* Make sure the text stays crisp */
+.dark * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; /* Adjust for fixed header */
@@ -123,5 +146,16 @@ body {
   padding: 0.2rem;
   border-radius: 0.2rem;
   color: #000000; 
+}
+
+/* Add these custom list styles */
+.custom-list {
+  list-style-position: outside;
+  padding-left: 1.25rem;
+}
+
+.custom-list li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
 }
 

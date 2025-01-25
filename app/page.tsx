@@ -8,229 +8,8 @@ import NewsScroll from './components/NewsScroll'
 import Skills from './components/Skills'
 import PopUp from './components/PopUp'
 import Footer from './components/Footer'
-
-// Define project and experience types
-interface Project {
-  id: string;
-  code: string;
-  title: string;
-  description: string;
-  tags: string[];
-  domain: string;
-  link: string;
-}
-
-interface Experience {
-  company: string;
-  title: string;
-  period: string;
-  location: string; // Add location field
-  techStack: string[];
-  responsibilities: string[];
-}
-
-const projects: Project[] = [
-  { 
-    id: '1',
-    code: 'mAIgic',
-    title: 'AI Agent that reads all your emails and updates your calendar',
-    description: 'Developed an open-source app that reads communication from gmail, slack, trello and automatically updates your calendar.',
-    tags: ['Python', 'Flask', 'Postgres', 'ReactJs'],
-    domain: 'AI',
-    link: 'https://github.com/yourusername/LLM-application'
-  },
-  {
-    id: '2',
-    code: 'IO',
-    title: 'Performance Optimization and Analysis of Disk I/O in a Real Linux Environment',
-    description: 'Achieved a 500% enhancement in cached reads and a 150% boost in non-cached reads, elevating read speeds from the local setup of 2500 MiB/s to 15000 MiB/s on a block size of 65536 bytes.',
-    tags: ['C++', 'Linux', 'Shell', 'Git'],
-    domain: 'Backend',
-    link: 'https://github.com/yourusername/Disk-IO-Optimization'
-  },
-  {
-    id: '3',
-    code: 'FAD',
-    title: 'AI-Fitness Analytics Dashboard',
-    description: 'Architected AWS services to host a Flask application on EC2 providing seamless integration with Google Fit metrics.',
-    tags: ['Python', 'Django', 'Postgres', 'DynamoDB', 'EC2', 'Sagemaker', 'SNS', 'SQS', 'ReactJs'],
-    domain: 'Full Stack',
-    link: 'https://github.com/yourusername/Fitness-Analytics-Dashboard'
-  },
-  // Dummy projects
-  {
-    id: '4',
-    code: 'DP1',
-    title: 'Flowcontrol',
-    description: 'This is a dummy project for testing purposes.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    domain: 'Frontend',
-    link: 'https://github.com/yourusername/dummy-project-1'
-  },
-  {
-    id: '5',
-    code: 'DP2',
-    title: 'KubeControl',
-    description: 'This is another dummy project for testing purposes.',
-    tags: ['Python', 'Django'],
-    domain: 'Backend',
-    link: 'https://github.com/yourusername/dummy-project-2'
-  },
-  {
-    id: '6',
-    code: 'DP3',
-    title: 'White board',
-    description: 'This is yet another dummy project for testing purposes.',
-    tags: ['React', 'Node.js'],
-    domain: 'Full Stack',
-    link: 'https://github.com/yourusername/dummy-project-3'
-  },
-  {
-    id: '7',
-    code: 'DP4',
-    title: 'Amazon Review',
-    description: 'This is a dummy project for testing purposes.',
-    tags: ['AWS', 'Docker'],
-    domain: 'Cloud',
-    link: 'https://github.com/yourusername/dummy-project-4'
-  },
-  {
-    id: '8',
-    code: 'DP5',
-    title: 'Telegram Checkout',
-    description: 'This is another dummy project for testing purposes.',
-    tags: ['Kubernetes', 'CI/CD'],
-    domain: 'DevOps',
-    link: 'https://github.com/yourusername/dummy-project-5'
-  },
-  {
-    id: '9',
-    code: 'DP6',
-    title: 'Dummy Project 6',
-    description: 'This is yet another dummy project for testing purposes.',
-    tags: ['Machine Learning', 'Python'],
-    domain: 'AI',
-    link: 'https://github.com/yourusername/dummy-project-6'
-  },
-  {
-    id: '10',
-    code: 'DP7',
-    title: 'Dummy Project 7',
-    description: 'This is a dummy project for testing purposes.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    domain: 'Frontend',
-    link: 'https://github.com/yourusername/dummy-project-7'
-  },
-  {
-    id: '11',
-    code: 'DP8',
-    title: 'Dummy Project 8',
-    description: 'This is another dummy project for testing purposes.',
-    tags: ['Python', 'Django'],
-    domain: 'Backend',
-    link: 'https://github.com/yourusername/dummy-project-8'
-  },
-  {
-    id: '12',
-    code: 'DP9',
-    title: 'Dummy Project 9',
-    description: 'This is yet another dummy project for testing purposes.',
-    tags: ['React', 'Node.js'],
-    domain: 'Full Stack',
-    link: 'https://github.com/yourusername/dummy-project-9'
-  },
-  {
-    id: '13',
-    code: 'DP10',
-    title: 'Dummy Project 10',
-    description: 'This is a dummy project for testing purposes.',
-    tags: ['AWS', 'Docker'],
-    domain: 'Cloud',
-    link: 'https://github.com/yourusername/dummy-project-10'
-  }
-]
-
-const experiences = {
-  technical: [
-    {
-      company: "Stealth AI Startup",
-      title: "Backend Developer Intern (AI)",
-      period: "June 2024 - Present",
-      location: "New York City, USA", 
-      techStack: ["Python", "SQL", "Apache Airflow", "Flask"],
-      responsibilities: [
-        "Designed Python/SQL ETL pipelines with Apache Airflow, boosting data ingestion speed by 30% and ensuring reliability with automated validation",
-        "Built RESTful APIs using Flask and joblib to deploy machine learning models, improving real-time phone price predictions and application responsiveness by 25%",
-        "Deployed a Regression model, enhancing price prediction accuracy by 15% through advanced feature engineering and hyperparameter tuning"
-      ]
-    },
-    {
-      company: "Defence Research & Development Organisation (Govt. of India)",
-      title: "Software Engineering Intern (R&D)",
-      period: "January 2023 - June 2023",
-      location: "Chandigarh, India", 
-      techStack: ["Python", "Shell", "PyQT", "MatPlotLib", "SerialPy", "SQL", "Docker"],
-      responsibilities: [
-        "Advised the Assistant Director of the Lab as the sole selected intern from a team of 20+, leading a project on heavy vehicle integrity estimation using LIDAR and GPS sensors",
-        "Architected and published a Python desktop application under 30MB to reverse engineer RS232 serial ports, decoding 1.5M+ bytes/second from LiDAR sensors and applying 25+ algorithms to analyze and visualize rut measurements"
-      ]
-    },
-    {
-      company: "Solar Industries India Ltd",
-      title: "Software Engineering Intern (Backend)",
-      period: "April 2022 - December 2022",
-      location: "Mumbai, India", 
-      techStack: ["Django", "FastAPI", "AWS", "Docker", "Jenkins", "Kafka", "Redis", "Elasticsearch"],
-      responsibilities: [
-        "Led a team of 5 interns to automate manual tasks across 25+ industrial plants, introducing 5 Python-based projects and deploying 75,000+ lines of production code",
-        "Optimized systems with 5 cross-functional teams to handle 100,000+ API requests across 20 endpoints, executing CRON operations on 2.5M rows/day within 1 sec using Cassandra, Kafka, and Postgres"
-      ]
-    }, 
-    {
-      company: "Universidad De Ibague",
-      title: "Technical Intern (Data Science)",
-      period: "July 2020 - October 2020",
-      location: "Ibague, Colombia", 
-      techStack: ["Java", "C++", "Python"],
-      responsibilities: [
-        "Assisted 100+ students in understanding complex data structures and algorithms, leading weekly lab sessions and grading assignments and exams",
-        "Conducted 1-on-1 tutoring sessions for students struggling with concepts, resulting in a 20% increase in average quiz scores"
-      ]
-    },
-    {
-      company: "Shiva Systems and Technologies Pvt Ltd",
-      title: "Software Engineering Intern",
-      period: "May 2020 - June 2020",
-      location: "Mumbai, India", 
-      techStack: ["Linux", "C", "C++", "Python"],
-      responsibilities: [
-        "Guided 50+ students in understanding the core concepts of operating systems, conducting weekly lab sessions and grading assignments and exams",
-        "Hosted 1-on-1 tutoring sessions for students facing difficulties in understanding system calls and process management, resulting in a 15% increase in average quiz scores"
-      ],
-    },
-      {
-      company: "Freelancer / Contract Jobs",
-      title: "Full Stack AI Developer",
-      period: "January 2021 - June 2021",
-      location: "Chennai, India",
-      techStack: ["Linux", "C", "C++", "Python"],
-      responsibilities: [
-        "Guided 50+ students in understanding the core concepts of operating systems, conducting weekly lab sessions and grading assignments and exams",
-        "Hosted 1-on-1 tutoring sessions for students facing difficulties in understanding system calls and process management, resulting in a 15% increase in average"
-      ]
-      }
-  ]
-}
-
-const domains = ['Frontend', 'Backend', 'AI', 'Full Stack', 'Cloud/DevOps', 'Full Stack']
-
-const domainHierarchy: { [key: string]: string[] } = {
-  'Frontend': ['Frontend', 'Full Stack'],
-  'Backend': ['Backend', 'Full Stack'],
-  'AI': ['AI'],
-  'Cloud/DevOps': ['Cloud/DevOps'],
-  'Full Stack': ['Full Stack'],
-}
+import { Project, projects, domains, domainHierarchy } from './data/projects'
+import { Experience, experiences } from './data/experiences'
 
 export default function HomePage() {
   const [activeSection, setActiveSection] = useState('')
@@ -243,6 +22,7 @@ export default function HomePage() {
 
   const [selectedDomains, setSelectedDomains] = useState<string[]>([])
   const [visibleProjectsCount, setVisibleProjectsCount] = useState(5)
+  const [visibleExperiencesCount, setVisibleExperiencesCount] = useState(3) // New state for experiences
 
   const filteredProjects = selectedDomains.length > 0
     ? projects.filter(project => selectedDomains.some(domain => domainHierarchy[domain].includes(project.domain)))
@@ -307,7 +87,16 @@ export default function HomePage() {
     setVisibleProjectsCount(5)
   }
 
+  const handleShowMoreExperiences = () => {
+    setVisibleExperiencesCount(experiences.technical.length)
+  }
+
+  const handleShowLessExperiences = () => {
+    setVisibleExperiencesCount(3)
+  }
+
   const visibleProjects = filteredProjects.slice(0, visibleProjectsCount)
+  const visibleExperiences = experiences.technical.slice(0, visibleExperiencesCount)
 
   return (
     <>
@@ -324,7 +113,7 @@ export default function HomePage() {
               </Link>
             </p>
             <p className="text-gray-600 dark:text-gray-300 text-lg md:text-xl">
-              I believe in solving problems. <br /> 
+              I believe in solving problems <span className="highlight">at scale</span>. <br /> 
               FullStack? AI? Core/Infra?<br /> I'm in! I Learn. I Implement.<br />
               <Link href="#skills" className="text-blue-500 hover:underline">
                 All my Technical Skills: Here.
@@ -379,26 +168,30 @@ export default function HomePage() {
             </div>
             <div className="md:w-2/3">
               <p className="mb-4">
-              Hi, I'm Reet Nandy, a Software + AI Engineer with <strong>3 years</strong> of in-depth internship experience specializing in <span className="highlight">Full Stack Development</span>, <span className="highlight">Cloud/DevOps infrastructure</span>, and <span className="highlight">AI/ML solutions</span>. <br />My expertise revolves around building scalable backend systems, optimizing performance, and deploying advanced AI models to enhance innovation and efficiency. I am committed to leveraging distributed systems to advance scalability and integrate cutting-edge technologies.
+              Hi, I'm Reet Nandy, a Software + AI Engineer with <strong>3 years</strong> of experience across 6 internships specializing in <span className="highlight">Full Stack Development</span>, <span className="highlight">Cloud/DevOps infrastructure</span>, and <span className="highlight">AI/ML solutions</span>. My expertise revolves around building scalable, cloud-native applications within distributed systems, optimizing performance, and developing and deploying AI models.
+              <br /><br />
+              <strong>In the realm of AI</strong>, I specialize in developing and deploying models from traditional machine learning techniques to <span className="highlight">Large Language Models (LLMs)</span>, with a focus on building intelligent systems and optimizing end-to-end workflows.
               </p>
-              <ul className="list-disc list-inside space-y-2 mb-4">
-                <li>Expertise in back-end development with Python and Node.js</li>
-                <li>Strong front-end skills with React and Next.js</li>
-                <li>Experience with database technologies like PostgreSQL and MongoDB</li>
-                <li>Proficient in cloud platforms such as AWS and Google Cloud</li>
-                <li>Advocate for clean code and best practices in software development</li>
+              <ul className="list-disc custom-list space-y-2 mb-4">
+                <li>Currently working on LLMs and RAG, focusing on multi-agent orchestration and advanced model pipelines.</li>
+                <li>Expertise in systems programming with C++, and backend development using Python (Django, Flask, FastAPI), Java (Spring Boot), and Node.js.</li>
+                <li>Strong front-end skills with React, Next.js and Tailwind CSS.</li>
+                <li>Skilled in Relational, NoSQL, and caching technologies, along with vector databases.</li>
+                <li>Proficient in AWS with experience in containerization, orchestration, CI/CD pipelines, and implementing robust monitoring and alerting systems.</li>
+                {/* <li>Advocate for clean code and best practices in software development</li> */}
               </ul>
               <div className="mt-6">
                 <h3 className="text-xl mb-2 font-bold underline">Education</h3>
-                <ul className="list-disc list-inside space-y-2">
-                  <li>M.S. in Computer Science, New York University (Expected 2025)</li>
-                  <li>B.Tech in Computer Science and Engineering, SRM Institute of Science and Technology (2023)</li>
+                <ul className="list-disc custom-list space-y-2">
+                  <li>M.S. in Computer Science, <strong>New York University</strong> (Expected 2025)</li>
+                  <li>B.Tech in Computer Science and Engineering, Manipal University Jaipur</li>
                 </ul>
-                <p className="mt-2 "><strong className='underline'>Key Courses:</strong> Advanced Algorithms, Machine Learning, Distributed Systems, Big Data</p>
-                <p className="mt-2"><strong className='underline'>Teaching Assistant:</strong> Data Structures (Fall 2024), Operating Systems (Spring 2024)</p>
+                <p className="mt-2 "><strong className='underline'>Key Courses:</strong> Advanced Algorithms, Operating Systems, Machine Learning, Distributed Systems, Big Data</p>
+                <p className="mt-2"><strong className='underline'>Teaching Assistant:</strong> Algorithms (Fall 2024, Spring 2025), Operating Systems (Fall 2024)</p>
               </div>
+              <br />
               <p>
-                When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying a good book.
+                If not a Coder, I would probably be a <span className="highlight">CHEF</span>. I love cooking and I am great at it :)
               </p>
               <p className="mt-4">
                 <Link href="/ReetNandy_SWE_Resume.pdf" className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">
@@ -416,7 +209,7 @@ export default function HomePage() {
         <section id="experience" ref={experienceRef} className="py-12">
           <h2 className="text-3xl font-bold mb-6 dark:text-white">Experience</h2>
           <div className="space-y-8">
-            {experiences.technical.map((exp, index) => (
+            {visibleExperiences.map((exp, index) => (
               <div key={index} className="neu-card p-6 dark:bg-gray-800">
                 <div className="flex flex-col mb-4">
                   <h3 className="text-xl font-semibold dark:text-white">{exp.company}</h3><br />
@@ -436,22 +229,42 @@ export default function HomePage() {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold mb-2 dark:text-white">Key Responsibilities:</h4>
-                  <ul className="list-disc list-inside text-sm space-y-1 dark:text-gray-300">
+                  <ul className="list-disc custom-list space-y-2 dark:text-gray-100"> {/* Updated spacing and text color */}
                     {exp.responsibilities.map((resp, i) => (
-                      <li key={i}>{resp}</li>
+                      <li key={i} className="text-base"> {/* Increased font size */}
+                        {resp}
+                      </li>
                     ))}
                   </ul>
                 </div>
               </div>
             ))}
           </div>
+          <div className="text-center mt-8">
+            <p className="mb-4 dark:text-gray-300">
+              Showing {visibleExperiences.length} of {experiences.technical.length} internships
+            </p>
+            {visibleExperiencesCount < experiences.technical.length && (
+              <button
+                onClick={handleShowMoreExperiences}
+                className="px-6 py-3 rounded-corners neu-button text-sm dark:bg-gray-700 dark:text-white"
+              >
+                Show More
+              </button>
+            )}
+            {visibleExperiencesCount > 4 && (
+              <button
+                onClick={handleShowLessExperiences}
+                className="px-6 py-3 rounded-corners neu-button text-sm dark:bg-gray-700 dark:text-white ml-4"
+              >
+                Show Less
+              </button>
+            )}
+          </div>
         </section>
 
         <section id="projects" ref={projectsRef} className="py-12">
           <h2 className="text-3xl font-bold mb-6 dark:text-white">Projects</h2>
-          <p className="mb-4 dark:text-gray-300">
-            Showing {visibleProjects.length} of {filteredProjects.length} projects
-          </p>
           <div className="flex flex-wrap gap-2 mb-8">
             {domains.map(domain => (
               <button
@@ -486,22 +299,37 @@ export default function HomePage() {
             {visibleProjects.map((project, index) => (
               <div 
                 key={project.code} 
-                className={`neu-card p-6 rounded-corners dark:bg-gray-700 dark:text-white ${index === 0 ? 'border-2 border-blue-500 dark:border-blue-400' : ''}`}
+                className={`neu-card p-6 rounded-corners dark:bg-gray-800 dark:text-white ${index === 0 ? 'border-2 border-blue-500 dark:border-blue-400' : ''}`}
               >
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
-                  <h3 className="text-lg font-medium mb-1">
+                <div className="flex flex-col mb-4">
+                  <h3 className="text-lg font-medium mb-3">
                     {project.title}
                   </h3>
-                  <a
-                    href={project.link}
-                    className="px-3 py-1 mt-2 md:mt-0 rounded-corners neu-button text-sm dark:bg-gray-600"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Link
-                  </a>
+                  <div>
+                    {project.isLinkClickable ? (
+                      <a
+                        href={project.link}
+                        className="inline-block px-3 py-1 rounded-corners neu-button text-sm dark:bg-gray-600"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {project.linkText}
+                      </a>
+                    ) : (
+                      <button
+                        className="inline-block px-3 py-1 rounded-corners neu-button text-sm dark:bg-gray-600"
+                        disabled
+                      >
+                        {project.linkText}
+                      </button>
+                    )}
+                  </div>
                 </div>
-                <p className="mb-2">{project.description}</p>
+                <ul className="list-disc custom-list mb-2">
+                  {project.description.map((desc, i) => (
+                    <li key={i}>{desc}</li>
+                  ))}
+                </ul>
                 <div className="mb-2">
                   {project.tags.map(tag => (
                     <span key={tag} className="inline-block bg-gray-200 dark:bg-gray-600 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-gray-200 mr-2 mb-2">
@@ -513,6 +341,9 @@ export default function HomePage() {
             ))}
           </div>
           <div className="text-center mt-8">
+            <p className="mb-4 dark:text-gray-300">
+              Showing {visibleProjects.length} of {filteredProjects.length} projects
+            </p>
             {visibleProjectsCount < filteredProjects.length && (
               <button
                 onClick={handleShowMore}

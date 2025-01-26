@@ -26,7 +26,11 @@ export default function HomePage() {
   const [visibleExperiencesCount, setVisibleExperiencesCount] = useState(3) // New state for experiences
 
   const filteredProjects = selectedDomains.length > 0
-    ? projects.filter(project => selectedDomains.some(domain => domainHierarchy[domain].includes(project.domain)))
+    ? projects.filter(project => 
+        project.domain.some(projectDomain => 
+          selectedDomains.includes(projectDomain)
+        )
+      )
     : projects
 
   const showPopUp = false //  pop-up
@@ -155,9 +159,9 @@ export default function HomePage() {
 
         <section id="about" ref={aboutRef} className="py-12">
           <h2 className="text-3xl font-bold mb-6">About Me</h2>
-          <div className="flex flex-col md:flex-row gap-8">
-            <div className="md:w-1/3">
-              <div className="neu-card p-4 rounded-corners">
+          <div className="flex flex-col md:flex-row gap-8 items-start"> {/* Added items-start */}
+            <div className="w-full md:w-1/3 flex justify-center"> {/* Changed from md:w-1/3 to include w-full */}
+              <div className="neu-card p-4 rounded-corners w-fit h-fit mx-auto"> {/* Added mx-auto */}
                 <Image
                   src="/Reet.png?height=300&width=300"
                   alt="Reet Nandy"

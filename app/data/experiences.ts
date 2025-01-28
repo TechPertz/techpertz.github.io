@@ -17,8 +17,8 @@ export const experiences = {
         techStack: ["Python", "SQL", "Apache Airflow", "Flask"],
         responsibilities: [
           "Developed a <b>Django-ReactJS</b> platform integrating ML models, delivering real-time predictions with <b>sub-1 second latency</b> through optimized APIs.",
+          "Implemented regression models for custom price prediction over a 90-day horizon, leveraging TimeSeriesSplit and hyperparameter optimization to reduce errors within +/- 5%.",
           "Engineered <b>ETL pipelines</b> with Apache Airflow, processing <b>15M+ records daily</b> and automating transformations, saving 3 man hours per dataset.",
-          "Built regression models for price prediction, using TimeSeriesSplit and advanced tuning to reduce errors within ±5% over a 90-day horizon.",
           "Optimized PostgreSQL queries to support frequent API calls and large-scale workflows, improving data retrieval efficiency."
         ]
       },

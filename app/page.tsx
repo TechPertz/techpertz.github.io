@@ -120,11 +120,11 @@ export default function HomePage() {
             <p className="text-gray-600 dark:text-gray-300 text-lg md:text-xl">
               I believe in solving problems <span className="highlight">at scale</span>. <br /> 
               FullStack? AI? Core/Infra?<br /> I'm in! I Learn. I Implement.<br />
-              <Link href="#skills" className="text-blue-500 hover:underline">
-                All my Technical Skills: Here.
+              <Link href="#about" className="text-blue-500 hover:underline">
+                Know more About Me and My Skills.
               </Link><br /><br />
               <b>Currently</b>, looking for <u>SDE/AI</u> Spring '25 internship and May'25 full-time opportunities. <br />
-              <br /><b>Prev</b>, building AI Pricing Engine @ Stealth AI Startup, NYC. <br /><br />
+              <br /><b>Prev</b>, building Pricing Engine @ Stealth AI Startup, NYC. <br /><br />
               <a href="mailto:reet.nandy@nyu.edu" className="text-blue-500 hover:underline">
                 reet.nandy@nyu.edu
               </a>
@@ -175,12 +175,12 @@ export default function HomePage() {
               <p className="mb-4">
               Hi, I'm Reet Nandy, a Software + AI Engineer with <strong>3 years</strong> of experience across 6 internships specializing in <span className="highlight">Full Stack Development</span>, <span className="highlight">Cloud/DevOps infrastructure</span>, and <span className="highlight">AI/ML solutions</span>. My expertise revolves around building scalable, cloud-native applications within distributed systems, optimizing performance, and developing and deploying AI models.
               <br /><br />
-              <strong>In the realm of AI</strong>, I specialize in developing and deploying models from traditional machine learning techniques to <span className="highlight">Large Language Models (LLMs)</span>, with a focus on building intelligent systems and optimizing end-to-end workflows.
+              <strong>In the realm of AI</strong>, I specialize in working with traditional machine learning techniques to <span className="highlight">Large Language Models (LLMs)</span>, with a focus on building intelligent systems and optimizing end-to-end workflows.
               </p>
               <ul className="list-disc custom-list space-y-2 mb-4">
                 <li>Currently working on LLMs and RAG, focusing on multi-agent orchestration and advanced model pipelines.</li>
                 <li>Expertise in systems programming with C++, and backend development using Python (Django, Flask, FastAPI), Java (Spring Boot), and Node.js.</li>
-                <li>Strong front-end skills with React, Next.js and Tailwind CSS.</li>
+                <li>Strong front-end skills with Next.js, React.js, and Tailwind CSS.</li>
                 <li>Skilled in Relational, NoSQL, and caching technologies, along with vector databases.</li>
                 <li>Proficient in AWS with experience in containerization, orchestration, CI/CD pipelines, and implementing robust monitoring and alerting systems.</li>
                 {/* <li>Advocate for clean code and best practices in software development</li> */}
@@ -191,7 +191,7 @@ export default function HomePage() {
                   <li>M.S. in Computer Science, <strong>New York University</strong> (Expected 2025)</li>
                   <li>B.Tech in Computer Science and Engineering, Manipal University Jaipur</li>
                 </ul>
-                <p className="mt-2 "><strong className='underline'>Key Courses:</strong> Advanced Algorithms, Operating Systems, Machine Learning, Distributed Systems, Big Data</p>
+                <p className="mt-2 "><strong className='underline'>Key Courses:</strong> Analysis of Algorithms, Operating Systems, Machine Learning, Cloud Computing, Big Data</p>
                 <p className="mt-2"><strong className='underline'>Teaching Assistant:</strong> Algorithms (Fall 2024, Spring 2025), Operating Systems (Fall 2024)</p>
               </div>
               <br />

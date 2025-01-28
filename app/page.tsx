@@ -23,7 +23,7 @@ export default function HomePage() {
 
   const [selectedDomains, setSelectedDomains] = useState<string[]>([])
   const [visibleProjectsCount, setVisibleProjectsCount] = useState(5)
-  const [visibleExperiencesCount, setVisibleExperiencesCount] = useState(3) // New state for experiences
+  const [visibleExperiencesCount, setVisibleExperiencesCount] = useState(3)
 
   const filteredProjects = selectedDomains.length > 0
     ? projects.filter(project => 
@@ -33,21 +33,20 @@ export default function HomePage() {
       )
     : projects
 
-  const showPopUp = false //  pop-up
+  const showPopUp = false
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Extract the section name without the '#' and set it as active
             setActiveSection(entry.target.id)
           }
         })
       },
       { 
-        rootMargin: '-80px 0px -20% 0px', // Adjust rootMargin to account for header
-        threshold: 0.2 // Lower threshold for better detection
+        rootMargin: '-80px 0px -20% 0px',
+        threshold: 0.2
       }
     )
 
@@ -73,7 +72,6 @@ export default function HomePage() {
           behavior: 'smooth'
         })
 
-        // Update URL with hash
         window.history.pushState(null, '', `/#${path}`)
       }
     }
@@ -110,7 +108,7 @@ export default function HomePage() {
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <section id="home" ref={homeRef} className="min-h-screen flex flex-col justify-center">
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl font-bold dark:text-white">Reet Nandy, MS</h1>
+            <h1 className="text-4xl md:text-5xl font-bold dark:text-white">Reet Nandy, M.S.</h1>
             <h2 className="text-2xl md:text-3xl font-semibold dark:text-gray-300">Software + AI Engineer</h2>
             <p className="text-md text-gray-500 dark:text-gray-400">
               <Link href="/secret-page" className="text-blue-500 hover:underline">
@@ -138,7 +136,7 @@ export default function HomePage() {
                 { href: "https://github.com/techpertz", label: "GitHub" },
                 { href: "https://linkedin.com/in/reetnandy", label: "LinkedIn" },
                 { href: "https://x.com/reetnandy", label: "X/Twitter" },
-                { href: "/ReetNandy_SWE_Resume.pdf", label: "Resume" } // Added Resume button
+                { href: "/ReetNandy_Resume.pdf", label: "Resume" }
               ].map((link) => (
                 <Link
                   key={link.label}
@@ -159,9 +157,9 @@ export default function HomePage() {
 
         <section id="about" ref={aboutRef} className="py-12">
           <h2 className="text-3xl font-bold mb-6">About Me</h2>
-          <div className="flex flex-col md:flex-row gap-8 items-start"> {/* Added items-start */}
-            <div className="w-full md:w-1/3 flex justify-center"> {/* Changed from md:w-1/3 to include w-full */}
-              <div className="neu-card p-4 rounded-corners w-fit h-fit mx-auto"> {/* Added mx-auto */}
+          <div className="flex flex-col md:flex-row gap-8 items-start">
+            <div className="w-full md:w-1/3 flex justify-center">
+              <div className="neu-card p-4 rounded-corners w-fit h-fit mx-auto">
                 <Image
                   src="/Reet.png?height=300&width=300"
                   alt="Reet Nandy"
@@ -183,12 +181,11 @@ export default function HomePage() {
                 <li>Strong front-end skills with Next.js, React.js, and Tailwind CSS.</li>
                 <li>Skilled in Relational, NoSQL, and caching technologies, along with vector databases.</li>
                 <li>Proficient in AWS with experience in containerization, orchestration, CI/CD pipelines, and implementing robust monitoring and alerting systems.</li>
-                {/* <li>Advocate for clean code and best practices in software development</li> */}
               </ul>
               <div className="mt-6">
                 <h3 className="text-xl mb-2 font-bold underline">Education</h3>
                 <ul className="list-disc custom-list space-y-2">
-                  <li>M.S. in Computer Science, <strong>New York University</strong> (Expected 2025)</li>
+                  <li>M.S. in Computer Science, <strong>New York University</strong> (Expected May 2025)</li>
                   <li>B.Tech in Computer Science and Engineering, Manipal University Jaipur</li>
                 </ul>
                 <p className="mt-2 "><strong className='underline'>Key Courses:</strong> Analysis of Algorithms, Operating Systems, Machine Learning, Cloud Computing, Big Data</p>
@@ -199,7 +196,7 @@ export default function HomePage() {
                 If not a Coder, I would probably be a <span className="highlight">CHEF</span>. I love cooking and I am great at it :)
               </p>
               <p className="mt-4">
-                <Link href="/ReetNandy_SWE_Resume.pdf" className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">
+                <Link href="/ReetNandy_Resume.pdf" className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">
                   View My Resume (PDF)
                 </Link>
               </p>
@@ -220,7 +217,7 @@ export default function HomePage() {
                   <h3 className="text-xl font-semibold dark:text-white">{exp.company}</h3><br />
                   <p className="text-lg text-gray-600 dark:text-white">{exp.title}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400">{exp.period}</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{exp.location}</p> {/* Display location */}
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{exp.location}</p>
                 </div>
                 <div className="mb-4">
                   <h4 className="text-sm font-semibold mb-2 dark:text-white">Tech Stack:</h4>
@@ -374,7 +371,7 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold mb-6 dark:text-white">Resume</h2>
           <p className="mb-4 dark:text-gray-300">Click the button below to view my full resume:</p>
           <Link 
-            href="/ReetNandy_SWE_Resume.pdf" 
+            href="/ReetNandy_Resume.pdf" 
             className="inline-block px-6 py-3 rounded-corners neu-button text-sm dark:bg-gray-700 dark:text-white"
             target="_blank"
             rel="noopener noreferrer"

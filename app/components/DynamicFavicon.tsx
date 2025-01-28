@@ -12,10 +12,8 @@ const DynamicFavicon = () => {
       }
     }
 
-    // Update initially
     updateFavicon()
 
-    // Create observer for theme changes
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.attributeName === 'class') {

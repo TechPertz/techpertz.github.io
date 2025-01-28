@@ -27,14 +27,13 @@ const Header = ({ activeSection }: HeaderProps) => {
     }
 
     window.addEventListener('scroll', handleScroll)
-    handleScroll() // Invoke on mount to set initial state
+    handleScroll() 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
     e.preventDefault()
     setIsMenuOpen(false)
-    // const element = document.querySelector(path)
     const elementId = path.replace('/#', '')
     const element = document.getElementById(elementId)
 
@@ -48,13 +47,11 @@ const Header = ({ activeSection }: HeaderProps) => {
         behavior: 'smooth'
       })
 
-      // Update URL with hash
       window.history.pushState(null, '', path)
     }
   }
 
   const isActive = (path: string) => {
-    // Remove '#' from path and compare with activeSection
     const section = path.replace('#', '')
     return section === activeSection
   }

@@ -3,7 +3,7 @@ export interface Project {
   title: string;
   description: string[];
   tags: string[];
-  domain: string[]; // Changed from string to string[]
+  domain: string[]; 
   link: string;
   isLinkClickable: boolean;
   linkText: string;
@@ -28,7 +28,7 @@ export const projects: Project[] = [
       "web3.py",
       "IPFS",
     ],
-    domain: ["AI", "Frontend", "Backend", "Web3"],
+    domain: ["AI", "Frontend", "Backend", "Cloud", "Web3"],
     link: "",
     isLinkClickable: false,
     linkText: "AI2Web3 Bootcamp Top Project",
@@ -86,7 +86,7 @@ export const projects: Project[] = [
       "Slack API",
       "AWS (EKS, S3, CloudWatch)",
     ],
-    domain: ["AI", "Frontend", "Backend", "Cloud", "DevOps/Infra"],
+    domain: ["Backend", "Cloud", "DevOps/Infra"],
     link: "https://github.com/TechPertz/KubeMonitorApp",
     isLinkClickable: true,
     linkText: "View on GitHub",
@@ -223,7 +223,7 @@ export const projects: Project[] = [
       "Implemented essential features, including image upload, cropping, and user authentication, using Firebase Storage and Cloud Firestore.",
     ],
     tags: ["Flutter", "Firebase", "FireAuth", "Cloud Firestore", "Dart"],
-    domain: ["Frontend", "Backend", "Cloud", "DevOps/Infra"],
+    domain: ["Frontend", "Backend", "Cloud"],
     link: "https://github.com/yourusername/reetnandy.com",
     isLinkClickable: true,
     linkText: "View on GitHub",

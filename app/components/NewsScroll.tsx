@@ -8,7 +8,7 @@ const newsItems = [
     id: 1, 
     title: 'Top project in AI2Web3 NYC. Invited to Venture Incubation.', 
     date: '13 Dec 2024',
-    content: 'Presented our project that bridged the gap between Web3 enthusiasts and Funding/Grants Opportunities along with personalized guidance to build a portfolio for each application with the help of developed AI Agents, RAG and Decentralized Networks. Read More in Project #2'
+    content: 'Presented our project that bridged the gap between Web3 enthusiasts and Funding/Grants Opportunities along with personalized guidance to build a portfolio for each application with the help of developed AI Agents, RAG and Decentralized Networks. Read More in Project #1'
   },
   { 
     id: 2, 

@@ -4,12 +4,10 @@ import { useState, useEffect } from 'react'
 import { Moon, Sun } from 'lucide-react'
 
 const ThemeToggle = () => {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(true) // Set default to dark mode
 
   useEffect(() => {
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-    setDarkMode(isDarkMode)
-    document.documentElement.classList.toggle('dark', isDarkMode)
+    document.documentElement.classList.add('dark') // Ensure dark mode is applied on mount
   }, [])
 
   const toggleTheme = () => {

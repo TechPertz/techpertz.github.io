@@ -41,11 +41,11 @@ const nextConfig = {
         destination: '/#projects',
         permanent: true,
       },
-      {
-        source: '/resume',
-        destination: '/#resume',
-        permanent: true,
-      },
+      // {
+      //   source: '/resume',
+      //   destination: '/#resume',
+      //   permanent: true,
+      // },
     ];
   },
 };

@@ -369,14 +369,23 @@ export default function HomePage() {
 
         <section id="resume" ref={resumeRef} className="py-12">
           <h2 className="text-3xl font-bold mb-6 dark:text-white">Resume</h2>
-          <p className="mb-4 dark:text-gray-300">Click the button below to view my full resume:</p>
+          <p className="mb-4 dark:text-gray-300">Click the button below to view my full resume <span className="highlight">(2 Pages)</span>:</p>
           <Link 
             href="/ReetNandy_Resume.pdf" 
+            className="inline-block px-6 py-3 rounded-corners neu-button text-sm dark:bg-gray-700 dark:text-white mb-4"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Full Resume (PDF)
+          </Link>
+          <p className="mb-4 dark:text-gray-300">Or, want job specific resume <span className="highlight">(1 Page)</span>?</p>
+          <Link 
+            href="/ReetNandy_SdeAI.pdf" 
             className="inline-block px-6 py-3 rounded-corners neu-button text-sm dark:bg-gray-700 dark:text-white"
             target="_blank"
             rel="noopener noreferrer"
           >
-            View Resume (PDF)
+            FullStack + AI Resume (PDF)
           </Link>
         </section>
       </main>

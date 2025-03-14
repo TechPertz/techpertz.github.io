@@ -11,6 +11,29 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    code: "DocFlow",
+    title: "DocFlow: GraphRAG - LLM Document Compliance",
+    description: [
+      "Implemented a GraphRAG and PDF parser from scratch for unstructured PDFs using PDFMiner & Tesseract (OCR).",
+      "Executed semantic chunking + NLP NER + BART-CNN summarization, achieving 70% relation extraction accuracy.",
+      "Synthesized hybrid retrieval (Vector + Graph + metadata) boosting compliance accuracy to 90%.",
+      "Launched Next.js SAAS with real-time document edit, approval and audit reports via WebSocket and Anthropic API."
+    ],
+    tags: [
+      "Next.js",
+      "FastAPI",
+      "GraphRAG",
+      "PostgreSQL",
+      "Anthropic API",
+      "FAISS",
+      "Neo4J"
+    ],
+    domain: ["AI", "Frontend", "Backend", "Cloud"],
+    link: "https://www.github.com/techpertz/docflow",
+    isLinkClickable: true,
+    linkText: "View on GitHub",
+  },
+  {
     code: "GrantGenie",
     title: "GrantGenie: AI Agent for Web3 Global Fund Matching",
     description: [
@@ -52,7 +75,7 @@ export const projects: Project[] = [
       "SQS",
     ],
     domain: ["AI", "Frontend", "Backend", "Cloud", "DevOps/Infra"],
-    link: "https://github.com/yourusername/Fitness-Analytics-Dashboard",
+    link: "https://github.com/techpertz/Fitness-Analytics-Dashboard",
     isLinkClickable: true,
     linkText: "View on GitHub",
   },
@@ -113,7 +136,7 @@ export const projects: Project[] = [
     ],
     tags: ["C++", "Linux", "Shell", "Git"],
     domain: ["Core/Systems"],
-    link: "https://github.com/yourusername/Disk-IO-Optimization",
+    link: "https://github.com/techpertz/Disk-IO-Optimization",
     isLinkClickable: true,
     linkText: "View on GitHub",
   },
@@ -224,7 +247,7 @@ export const projects: Project[] = [
     ],
     tags: ["Flutter", "Firebase", "FireAuth", "Cloud Firestore", "Dart"],
     domain: ["Frontend", "Backend", "Cloud"],
-    link: "https://github.com/yourusername/reetnandy.com",
+    link: "https://github.com/techpertz/reetnandy.com",
     isLinkClickable: true,
     linkText: "View on GitHub",
   },

@@ -34,6 +34,30 @@ export const projects: Project[] = [
     linkText: "View on GitHub",
   },
   {
+    code: "VectorFlow",
+    title: "VectorFlow: Hierarchical Vector Database (from Scratch)",
+    description: [
+      "Architected hierarchical vector database (library → document → chunk) with async per-collection mutexes; 12K ops/sec, 0.1% lock contention.",
+      "Engineered hybrid index backends (LinearScan/KD-Tree/LSH) for O(1)-O(n) search; 18ms latency across 10M vectors.",
+      "Deployed race-free Kubernetes pipelines (Helm/Minikube) with CLI toolkit, reducing onboarding complexity by 100%.",
+    ],
+    tags: [
+      "Python",
+      "FastAPI",
+      "Pydantic",
+      "Cohere",
+      "AsyncIO",
+      "Docker",
+      "Kubernetes",
+      "Helm",
+      "Minikube",
+    ],
+    domain: ["AI", "Backend", "Core/Systems", "Cloud", "DevOps/Infra"],
+    link: "",
+    isLinkClickable: false,
+    linkText: "AI2Web3 Bootcamp Top Project",
+  },
+  {
     code: "GrantGenie",
     title: "GrantGenie: AI Agent for Web3 Global Fund Matching",
     description: [
@@ -80,19 +104,6 @@ export const projects: Project[] = [
     linkText: "View on GitHub",
   },
   {
-    code: "Flowcontrol",
-    title: "Flowcontrol: Simplifying Complex Shell Workflows",
-    description: [
-      "Developed a C++ framework to streamline command-line workflows, enabling developers to easily automate tasks like piping (|), redirections (>), and multi-command execution (;) with robust error handling (2>&1).",
-      "Implemented a .flow file parser to simplify the creation and execution of complex command sequences, reducing manual effort and providing an intuitive way to manage shell operations efficiently.",
-    ],
-    tags: ["C++", "Unix Systems Programming", "Shell"],
-    domain: ["Core/Systems"],
-    link: "https://github.com/TechPertz/FlowControl/tree/test",
-    isLinkClickable: true,
-    linkText: "View on GitHub",
-  },
-  {
     code: "KubeControl",
     title: "KubeControl: Cloud-Native Monitoring and Alerting Solution",
     description: [
@@ -124,6 +135,19 @@ export const projects: Project[] = [
     tags: ["Java", "Java Swing", "Spring Boot", "WebSockets", "Batch Processing"],
     domain: ["Frontend", "Backend", "Core/Systems"],
     link: "https://github.com/TechPertz/WhiteBoard",
+    isLinkClickable: true,
+    linkText: "View on GitHub",
+  },
+  {
+    code: "Flowcontrol",
+    title: "Flowcontrol: Simplifying Complex Shell Workflows",
+    description: [
+      "Developed a C++ framework to streamline command-line workflows, enabling developers to easily automate tasks like piping (|), redirections (>), and multi-command execution (;) with robust error handling (2>&1).",
+      "Implemented a .flow file parser to simplify the creation and execution of complex command sequences, reducing manual effort and providing an intuitive way to manage shell operations efficiently.",
+    ],
+    tags: ["C++", "Unix Systems Programming", "Shell"],
+    domain: ["Core/Systems"],
+    link: "https://github.com/TechPertz/FlowControl/tree/test",
     isLinkClickable: true,
     linkText: "View on GitHub",
   },

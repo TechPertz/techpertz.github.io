@@ -28,6 +28,24 @@ const newsItems = [
     date: '24 Jan 2025',
     content: 'Finally ended the procrastination and built myself a personal website. lol.'
   },
+  { 
+    id: 5, 
+    title: 'Advanced Agent / RAG exploration', 
+    date: '1 Mar 2025',
+    content: 'Built a Agentic Saas that uses Graphs on top of Vector DBs as knowledge base for document audit. Exponential improvements noticed. Project: DocFlow'
+  },
+  { 
+    id: 6, 
+    title: 'Optimizing AI Agents', 
+    date: '22 Mar 2025',
+    content: 'Went beyond Pinecone/FAISS. Made my own hierarchical Vector DB with custom indexing and search algorithms. Project: VectorFlow'
+  },
+  { 
+    id: 7, 
+    title: 'VectorFlow Famous', 
+    date: '24 Mar 2025',
+    content: 'My own VectorDB from scratch, VectorFlow got noticed by the Founder of DevOps: Patrick Debois on LinkedIn.'
+  }
 ].reverse()
 
 export default function NewsScroll() {

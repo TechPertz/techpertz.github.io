@@ -10,8 +10,8 @@ export interface Experience {
 export const experiences = {
     technical: [
       {
-        company: "Stealth AI Startup",
-        title: "Backend Developer Intern (AI)",
+        company: "Backend Developer Intern (AI/ML)",
+title: "Mobility Intelligence Inc",
         period: "June 2024 - December 2024",
         location: "New York City, USA", 
         techStack: ["Python", "SQL", "Apache Airflow", "Flask"],
@@ -23,8 +23,8 @@ export const experiences = {
         ]
       },
       {
-        company: "Defence Research & Development Organisation (Govt. of India)",
-        title: "Software Engineering Intern (R&D)",
+        company: "Software Engineering Intern (R&D)",
+        title: "Defence Research & Development Organisation (Govt. of India)",
         period: "January 2023 - June 2023",
         location: "Chandigarh, India", 
         techStack: ["Python", "Shell", "PyQT", "MatPlotLib", "SerialPy", "SQL", "Docker"],
@@ -35,8 +35,8 @@ export const experiences = {
         ]
       },
       {
-        company: "Solar Industries India Ltd",
-        title: "Software Engineering Intern (Backend)",
+        company: "Software Engineering Intern (Backend)",
+        title: "Solar Industries India Ltd",
         period: "April 2022 - December 2022",
         location: "Mumbai, India", 
         techStack: ["Django", "FastAPI", "AWS", "Docker", "Jenkins", "Kafka", "Redis", "Elasticsearch"],
@@ -47,8 +47,8 @@ export const experiences = {
         ]
       }, 
       {
-        company: "Freelancer / Contract Jobs",
-        title: "Full Stack / AI Developer",
+        company: "Full Stack / AI Developer",
+        title: "Freelancer / Contract Jobs",
         period: "January 2022 - June 2022",
         location: "Remote",
         techStack: ["Python", "Django", "ReactJS", "PostgreSQL", "DigitalOcean", "VPS"],
@@ -58,8 +58,8 @@ export const experiences = {
         ]
         },
       {
-        company: "Universidad De Ibague",
-        title: "Technical Intern (Data)",
+        company: "Technical Intern (Data)",
+        title: "Universidad De Ibague",
         period: "July 2020 - October 2020",
         location: "Ibague, Colombia", 
         techStack: ["Python", "ArcGIS", "Pandas", "NumPy"],
@@ -69,8 +69,8 @@ export const experiences = {
         ]
       },
       {
-        company: "Shiva Systems and Technologies Pvt Ltd",
-        title: "Software Engineering Intern",
+        company: "Software Engineering Intern",
+        title: "Shiva Systems and Technologies Pvt Ltd",
         period: "May 2020 - June 2020",
         location: "Mumbai, India", 
         techStack: ["Python", "BeautifulSoup", "Pandas", "NumPy"],

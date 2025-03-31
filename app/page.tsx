@@ -23,7 +23,9 @@ export default function HomePage() {
 
   const [selectedDomains, setSelectedDomains] = useState<string[]>([])
   const [visibleProjectsCount, setVisibleProjectsCount] = useState(5)
+  const [expandedProject, setExpandedProject] = useState<number | null>(null)
   const [visibleExperiencesCount, setVisibleExperiencesCount] = useState(3)
+  const [expandedExperience, setExpandedExperience] = useState<number | null>(null)
 
   const filteredProjects = selectedDomains.length > 0
     ? projects.filter(project => 
@@ -98,6 +100,33 @@ export default function HomePage() {
     setVisibleExperiencesCount(3)
   }
 
+  const toggleExperience = (index: number) => {
+    setExpandedExperience(prev => prev === index ? null : index)
+  }
+
+  const toggleProject = (index: number) => {
+    setExpandedProject(prev => prev === index ? null : index)
+  }
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    e.preventDefault()
+    const elementId = path.replace('/#', '')
+    const element = document.getElementById(elementId)
+
+    if (element) {
+      const headerOffset = 80
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+
+      window.history.pushState(null, '', path)
+    }
+  }
+
   const visibleProjects = filteredProjects.slice(0, visibleProjectsCount)
   const visibleExperiences = experiences.technical.slice(0, visibleExperiencesCount)
 
@@ -121,8 +150,8 @@ export default function HomePage() {
               <Link href="#about" className="text-blue-500 hover:underline">
                 Know more About Me and My Skills.
               </Link><br /><br />
-              <b>Currently</b>, looking for <u>SDE/AI</u> Spring '25 internship and May'25 full-time opportunities. <br />
-              <br /><b>Prev</b>, building Pricing Engine @ Stealth AI Startup, NYC. <br /><br />
+              <b>Currently</b>, looking for SWE/AI May'25 full-time opportunities. <br />
+              <br /><b>Prev</b>, building Pricing Engine @ Mobility Intel, NYC. <br /><br />
               <a href="mailto:reet.nandy@nyu.edu" className="text-blue-500 hover:underline">
                 reet.nandy@nyu.edu
               </a>
@@ -136,14 +165,15 @@ export default function HomePage() {
                 { href: "https://github.com/techpertz", label: "GitHub" },
                 { href: "https://linkedin.com/in/reetnandy", label: "LinkedIn" },
                 { href: "https://x.com/reetnandy", label: "X/Twitter" },
-                { href: "/ReetNandy_Resume.pdf", label: "Resume" }
+                { href: "/#resume", label: "Resume", isInternal: true }
               ].map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
                   className="px-6 py-3 rounded-corners neu-button text-sm dark:bg-gray-700 dark:text-white"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={link.isInternal ? (e) => handleSmoothScroll(e, link.href) : undefined}
+                  target={!link.isInternal ? "_blank" : undefined}
+                  rel={!link.isInternal ? "noopener noreferrer" : undefined}
                 >
                   {link.label}
                 </Link>
@@ -212,7 +242,11 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold mb-6 dark:text-white">Experience</h2>
           <div className="space-y-8">
             {visibleExperiences.map((exp, index) => (
-              <div key={index} className="neu-card p-6 dark:bg-gray-800">
+              <div 
+                key={index} 
+                onClick={() => toggleExperience(index)}
+                className="neu-card p-6 dark:bg-gray-800 cursor-pointer transition-all duration-300 ease-in-out hover:scale-[1.02]"
+              >
                 <div className="flex flex-col mb-4">
                   <h3 className="text-xl font-semibold dark:text-white">{exp.company}</h3><br />
                   <p className="text-lg text-gray-600 dark:text-white">{exp.title}</p>
@@ -229,7 +263,16 @@ export default function HomePage() {
                     ))}
                   </div>
                 </div>
-                <div>
+                <div className="text-blue-500 hover:underline dark:text-blue-400 mt-2">
+                  {expandedExperience === index ? "Click to show less" : "Click to expand and know more"}
+                </div>
+                <div 
+                  className={`mt-4 overflow-hidden transition-all duration-300 ease-in-out ${
+                    expandedExperience === index 
+                      ? 'max-h-[1000px] opacity-100' 
+                      : 'max-h-0 opacity-0'
+                  }`}
+                >
                   <h4 className="text-sm font-semibold mb-2 dark:text-white">Key Responsibilities:</h4>
                   <ul className="list-disc custom-list space-y-2 dark:text-gray-100">
                     {exp.responsibilities.map((resp, i) => (
@@ -301,7 +344,10 @@ export default function HomePage() {
             {visibleProjects.map((project, index) => (
               <div 
                 key={index} 
-                className={`neu-card p-6 rounded-corners dark:bg-gray-800 dark:text-white ${index === 0 ? 'border-2 border-blue-500 dark:border-blue-400' : ''}`}
+                onClick={() => toggleProject(index)}
+                className={`neu-card p-6 rounded-corners dark:bg-gray-800 dark:text-white cursor-pointer transition-all duration-300 ease-in-out hover:scale-[1.02] ${
+                  index === 0 ? 'border-2 border-blue-500 dark:border-blue-400' : ''
+                }`}
               >
                 <div className="flex flex-col mb-4">
                   <h3 className="text-lg font-medium mb-3">
@@ -314,6 +360,7 @@ export default function HomePage() {
                         className="inline-block px-3 py-1 rounded-corners neu-button text-sm dark:bg-gray-600"
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()} // Prevent card click when clicking link
                       >
                         {project.linkText}
                       </a>
@@ -321,25 +368,43 @@ export default function HomePage() {
                       <button
                         className="inline-block px-3 py-1 rounded-corners neu-button text-sm dark:bg-gray-600"
                         disabled
+                        onClick={(e) => e.stopPropagation()}
                       >
                         {project.linkText}
                       </button>
                     )}
                   </div>
                 </div>
-                <ul className="list-disc custom-list mb-2">
-                  {project.description.map((desc, i) => (
-                    <li key={i}>
-                      <FormattedText text={desc} />
-                    </li>
-                  ))}
-                </ul>
-                <div className="mb-2">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="inline-block bg-gray-200 dark:bg-gray-600 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-gray-200 mr-2 mb-2">
-                      {tag}
-                    </span>
-                  ))}
+                <div className="mb-4">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map(tag => (
+                      <span 
+                        key={tag} 
+                        className="inline-block bg-gray-200 dark:bg-gray-600 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-gray-200"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="text-blue-500 hover:underline dark:text-blue-400 mt-2">
+                  {expandedProject === index ? "Click to show less" : "Click to expand and know more"}
+                </div>
+                <div 
+                  className={`mt-4 overflow-hidden transition-all duration-300 ease-in-out ${
+                    expandedProject === index 
+                      ? 'max-h-[1000px] opacity-100' 
+                      : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <ul className="list-disc custom-list mb-2">
+                    {project.description.map((desc, i) => (
+                      <li key={i}>
+                        <FormattedText text={desc} />
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
@@ -368,19 +433,19 @@ export default function HomePage() {
         </section>
 
         <section id="resume" ref={resumeRef} className="py-12">
-          <h2 className="text-3xl font-bold mb-6 dark:text-white">Resume</h2>
-          <p className="mb-4 dark:text-gray-300">Click the button below to view my full resume <span className="highlight">(2 Pages)</span>:</p>
+          <h2 className="text-3xl font-bold mb-6 dark:text-white">Role Specific Resume</h2>
+          <p className="mb-4 dark:text-gray-300"><span className="highlight">AI Engineer</span> (AI/ML + Fullstack + Cloud):</p>
           <Link 
-            href="/ReetNandy_Resume.pdf" 
+            href="/ReetNandy_AI.pdf" 
             className="inline-block px-6 py-3 rounded-corners neu-button text-sm dark:bg-gray-700 dark:text-white mb-4"
             target="_blank"
             rel="noopener noreferrer"
           >
             View Full Resume (PDF)
           </Link>
-          <p className="mb-4 dark:text-gray-300">Or, want job specific resume <span className="highlight">(1 Page)</span>?</p>
+          <p className="mb-4 dark:text-gray-300"><span className="highlight">Software Engineer / SWE</span> (Fullstack + Cloud + Core)</p>
           <Link 
-            href="/ReetNandy_SdeAI.pdf" 
+            href="/ReetNandy_SWE.pdf" 
             className="inline-block px-6 py-3 rounded-corners neu-button text-sm dark:bg-gray-700 dark:text-white"
             target="_blank"
             rel="noopener noreferrer"

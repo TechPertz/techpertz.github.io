@@ -441,7 +441,7 @@ export default function HomePage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            View Full Resume (PDF)
+            View PDF
           </Link>
           <p className="mb-4 dark:text-gray-300"><span className="highlight">Software Engineer / SWE</span> (Fullstack + Cloud + Core)</p>
           <Link 
@@ -450,7 +450,7 @@ export default function HomePage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            FullStack + AI Resume (PDF)
+            View PDF
           </Link>
         </section>
       </main>

@@ -433,20 +433,11 @@ export default function HomePage() {
         </section>
 
         <section id="resume" ref={resumeRef} className="py-12">
-          <h2 className="text-3xl font-bold mb-6 dark:text-white">Role Specific Resume</h2>
-          <p className="mb-4 dark:text-gray-300"><span className="highlight">AI Engineer</span> (AI/ML + Fullstack + Cloud):</p>
+          <h2 className="text-3xl font-bold mb-6 dark:text-white">Resume</h2>
+          <p className="mb-4 dark:text-gray-300">Download my Resume Here: <span className="highlight">Software + AI Engineer</span></p>
           <Link 
-            href="/ReetNandy_AI.pdf" 
+            href="/ReetNandy_Resume.pdf" 
             className="inline-block px-6 py-3 rounded-corners neu-button text-sm dark:bg-gray-700 dark:text-white mb-4"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View PDF
-          </Link>
-          <p className="mb-4 dark:text-gray-300"><span className="highlight">Software Engineer / SWE</span> (Fullstack + Cloud + Core)</p>
-          <Link 
-            href="/ReetNandy_SWE.pdf" 
-            className="inline-block px-6 py-3 rounded-corners neu-button text-sm dark:bg-gray-700 dark:text-white"
             target="_blank"
             rel="noopener noreferrer"
           >

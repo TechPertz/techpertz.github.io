@@ -14,10 +14,10 @@ export const projects: Project[] = [
     code: "DocFlow",
     title: "DocFlow: GraphRAG - LLM Document Compliance",
     description: [
+      "Launched an Agentic SaaS with real-time document edit, approval and audit reports via Graph based RAG and LLM.",
       "Implemented a GraphRAG and PDF parser from scratch for unstructured PDFs using PDFMiner & Tesseract (OCR).",
       "Executed semantic chunking + NLP NER + BART-CNN summarization, achieving 70% relation extraction accuracy.",
-      "Synthesized hybrid retrieval (Vector + Graph + metadata) boosting compliance accuracy to 90%.",
-      "Launched Next.js SAAS with real-time document edit, approval and audit reports via WebSocket and Anthropic API."
+      "Synthesized hybrid retrieval (Vector + Graph + metadata) boosting compliance accuracy to 90%."
     ],
     tags: [
       "Next.js",
@@ -37,9 +37,9 @@ export const projects: Project[] = [
     code: "VectorFlow",
     title: "VectorFlow: Hierarchical Vector Database (from Scratch)",
     description: [
-      "Architected hierarchical vector database (library → document → chunk) with async per-collection mutexes; 12K ops/sec, 0.1% lock contention.",
-      "Engineered hybrid index backends (LinearScan/KD-Tree/LSH) for O(1)-O(n) search; 18ms latency across 10M vectors.",
-      "Deployed race-free Kubernetes pipelines (Helm/Minikube) with CLI toolkit, reducing onboarding complexity by 100%.",
+      "Built embedding database (library - document - chunk) with async collection mutexes; 12K ops/sec at <0.1% conflicts.",
+      "Added 3 indexing algorithms (LinearScan/KD-Tree/LSH) for vector search on 10M vectors in 18ms.",
+      "Led Kubernetes Helm deployment along with custom made CLI toolkit, reducing onboarding complexity by 100%."
     ],
     tags: [
       "Python",
@@ -53,9 +53,9 @@ export const projects: Project[] = [
       "Minikube",
     ],
     domain: ["AI", "Backend", "Core/Systems", "Cloud", "DevOps/Infra"],
-    link: "",
-    isLinkClickable: false,
-    linkText: "AI2Web3 Bootcamp Top Project",
+    link: "https://www.github.com/techpertz/vectorflow",
+    isLinkClickable: true,
+    linkText: "View on GitHub",
   },
   {
     code: "GrantGenie",
@@ -129,8 +129,9 @@ export const projects: Project[] = [
     code: "Whiteboard",
     title: "White board: Real-Time Collaborative Java Application",
     description: [
-      "Designed and implemented a real-time collaborative whiteboard application, leveraging WebSockets for seamless, multi-user drawing updates and Java Swing for an intuitive GUI.",
-      "Optimized performance with batch processing, asynchronous communication, and thread-safe concurrency controls, ensuring low-latency updates and efficient handling of large-scale data.",
+      "Built low-latency collaboration using Spring Boot and Swing, achieving <150ms sync for concurrent users via binary compression.",
+      "Implemented vector operations using operational transformation, resolving 98% conflicts in real-time updates.",
+      "Executed socket programming with PostgreSQL and JSONB storage, achieving 85% network overhead reduction."
     ],
     tags: ["Java", "Java Swing", "Spring Boot", "WebSockets", "Batch Processing"],
     domain: ["Frontend", "Backend", "Core/Systems"],

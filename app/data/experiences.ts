@@ -10,10 +10,26 @@ export interface Experience {
 export const experiences = {
     technical: [
       {
+        company: "Sentrion AI",
+        title: "Founding Software Engineer (Early Team Member)",
+        period: "June 2025 – Present",
+        location: "New York City, USA",
+        techStack: ["PostgreSQL", "RDS Proxy", "Elasticsearch", "AWS Glue", "LangGraph", "AWS Bedrock", "FastAPI", "RabbitMQ", "Better-Stack", "AWS", "Clerk", "JWT", "Stripe API"],
+        responsibilities: [
+          "<b>As the Startup’s first technical hire, I single-handedly architected, developed, and deployed the company's entire technical infrastructure and product suite from the ground up and increased the MRR by 2.5x under three months.</b>",
+          "Architected a high-performance data infrastructure from scratch for 60M+ rows, pairing PostgreSQL with RDS Proxy for connection pooling and Elasticsearch for sub-200ms search, and integrated an AWS Glue ETL pipeline to migrate 200M+ (1M+ daily) records with zero downtime.",
+          "Engineered a multi-agent AI system using LangGraph to orchestrate AWS Bedrock models, automating complex user workflows and embedding intelligence directly into the core product (SaaS + Data Platform).",
+          "Developed 2 fault-tolerant FastAPI microservices and a multiple RabbitMQ queues with priority routing to decouple SaaS, batch, and analytical workloads, eliminating $5k/month in vendor costs and ensuring 99.9% reliability with a centralised logging system with Better-Stack.",
+          "Optimised cost for AWS, reducing monthly cloud spend by $3k through autoscaling, rightsizing, and event-driven (S3) daily data ingestion.",
+          "Architected the platform's unified IAM and monetisation core, engineering a secure, tiered billing system by integrating Clerk (authentication), a custom JWT-based API credit ledger, and Stripe API.",
+          "Served as the 1:1 technical POC for enterprise clients, translating complex business needs into engineering roadmaps to drive customer success."
+        ]
+      },
+      {
         company: "Mobility Intelligence",
         title: "FullStack Development Intern",
         period: "June 2024 – December 2024",
-        location: "New York City, USA", 
+        location: "New York City, USA",
         techStack: ["Python", "FastAPI", "Celery", "Redis", "PostgreSQL", "Apache Airflow", "Prometheus", "Grafana", "AWS", "Kubernetes"],
         responsibilities: [
           "Built a real-time price prediction system using regression and Kalman filtering, achieving less than 5% error on 90-day forecasts.",

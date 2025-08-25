@@ -150,7 +150,7 @@ export default function HomePage() {
               <Link href="#about" className="text-blue-500 hover:underline">
                 Know more About Me and My Skills.
               </Link><br /><br />
-              <b>Currently</b>, looking for SWE/AI May'25 full-time opportunities. <br />
+              <b>Currently</b>, Founding Software Engineer @ Sentrion AI, NYC. <br />
               <br /><b>Prev</b>, building Pricing Engine @ Mobility Intel, NYC. <br /><br />
               <a href="mailto:reet.nandy@nyu.edu" className="text-blue-500 hover:underline">
                 reet.nandy@nyu.edu
@@ -436,7 +436,7 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold mb-6 dark:text-white">Resume</h2>
           <p className="mb-4 dark:text-gray-300">Download my Resume Here: <span className="highlight">Software + AI Engineer</span></p>
           <Link 
-            href="/ReetNandy_Resume.pdf" 
+            href="/ReetNandy_AI.pdf" 
             className="inline-block px-6 py-3 rounded-corners neu-button text-sm dark:bg-gray-700 dark:text-white mb-4"
             target="_blank"
             rel="noopener noreferrer"

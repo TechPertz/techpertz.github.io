@@ -201,7 +201,7 @@ export default function HomePage() {
             </div>
             <div className="md:w-2/3">
               <p className="mb-4">
-              Hi, I'm Reet Nandy, a Software + AI Engineer with <strong>3 years</strong> of experience across 6 internships specializing in <span className="highlight">Full Stack Development</span>, <span className="highlight">Cloud/DevOps infrastructure</span>, and <span className="highlight">AI/ML solutions</span>. My expertise revolves around building scalable, cloud-native applications within distributed systems, optimizing performance, and developing and deploying AI models.
+              Hi, I'm Reet Nandy, a Software + AI Engineer with <strong>3 years</strong> of experience as a Founding Engineer in a Startup (Currently) + 6 internships specializing in <span className="highlight">Full Stack Development</span>, <span className="highlight">Cloud/DevOps infrastructure</span>, and <span className="highlight">AI/ML solutions</span>. My expertise revolves around building scalable, cloud-native applications within distributed systems, optimizing performance, and developing and deploying AI models.
               <br /><br />
               <strong>In the realm of AI</strong>, I specialize in working with traditional machine learning techniques to <span className="highlight">Large Language Models (LLMs)</span>, with a focus on building intelligent systems and optimizing end-to-end workflows.
               </p>
@@ -226,7 +226,7 @@ export default function HomePage() {
                 If not a Coder, I would probably be a <span className="highlight">CHEF</span>. I love cooking and I am great at it :)
               </p>
               <p className="mt-4">
-                <Link href="/ReetNandy_Resume.pdf" className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">
+                <Link href="/ReetNandy_AI.pdf" className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">
                   View My Resume (PDF)
                 </Link>
               </p>

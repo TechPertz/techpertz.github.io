@@ -66,7 +66,7 @@
   <nav aria-label="Main">
     <ul class="nav">
       <li class="nav-wide"><a href="#keypedia">Now</a></li>
-      <li class="nav-wide"><a href="#rules">Rules</a></li>
+      <li class="nav-wide"><a href="#stack">Stack</a></li>
       <li class="nav-wide"><a href="#sentrion">Before</a></li>
       <li class="nav-wide"><a href="#journey">Origin</a></li>
       <li class="nav-wide"><a href="#projects">Projects</a></li>
@@ -417,29 +417,10 @@
     </div>
   </section>
 
-  <!-- Rules: what the cases above turned into, split by track -->
-  <section class="ch ch-prin wrap" id="rules" aria-labelledby="prin-title">
-    <p class="ch-label reveal">Rules</p>
-    <h2 id="prin-title" class="statement scrub">Six rules, each from a case above.</h2>
-    <div class="prin-cols">
-      <div class="prin-col">
-        <p class="prin-colh reveal">Systems</p>
-        <ol class="prin">
-          <li class="reveal"><b>Assume at-least-once.</b> <span>Workers are idempotent under redelivery.</span> <a class="prin-from" href="#case-cost">from: Cost</a></li>
-          <li class="reveal"><b>One writer per dataset.</b> <span>Reconcile, then cut over.</span> <a class="prin-from" href="#case-truth">from: Truth</a></li>
-          <li class="reveal"><b>Authorize on the server.</b> <span>One policy point; the UI only renders.</span> <a class="prin-from" href="#case-arch">from: Architecture</a></li>
-        </ol>
-      </div>
-      <div class="prin-col">
-        <p class="prin-colh reveal">AI</p>
-        <ol class="prin">
-          <li class="reveal"><b>Evals gate releases.</b> <span>A test set frozen before any tuning.</span> <a class="prin-from" href="#case-quality">from: Quality</a></li>
-          <li class="reveal"><b>Cost is a metric.</b> <span>Every pipeline reports cost per document and per service.</span> <a class="prin-from" href="#case-scale">from: Scale</a></li>
-          <li class="reveal"><b>Least privilege for agents.</b> <span>Writes need their own scope and explicit consent.</span> <a class="prin-from" href="#case-ai">from: Clients’ AI</a></li>
-        </ol>
-      </div>
-    </div>
-    <div class="prin-stack">
+  <!-- Stack: the tools behind the cases above -->
+  <section class="ch ch-stack wrap" id="stack" aria-labelledby="stack-title">
+    <h2 id="stack-title" class="ch-label reveal">Stack</h2>
+    <div class="stack-rows">
       <p class="who-tools reveal"><span class="tools-k">Systems</span> Python, TypeScript · Django, FastAPI, Next.js · PostgreSQL, Redis, Celery, Kafka · GCP, AWS, Kubernetes, KEDA</p>
       <p class="who-tools reveal"><span class="tools-k">AI</span> LLM evals · GraphRAG · MCP, OAuth 2.1 · Gemini, OpenAI, Claude</p>
     </div>

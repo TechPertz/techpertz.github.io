@@ -682,9 +682,14 @@ html:not(.js) .who-grid { grid-template-columns: minmax(0, 1fr); }
 .stage .node.sym .n-name { fill: #fff; }
 .stage .node.sym .n-role { fill: rgba(255, 255, 255, .82); }
 
-/* ---------- Stack: the tools behind the cases ---------- */
-.stack-rows { margin-top: clamp(20px, 2.4vw, 32px); display: grid; gap: 10px; font-size: 16px; }
-.stack-rows .who-tools { margin-top: 0; display: flex; gap: 14px; align-items: baseline; }
+/* ---------- Stack: the tools behind the cases, set large ---------- */
+.stack-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 4vw, 72px); }
+.stack-h { font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); line-height: 1; padding-bottom: 12px; border-bottom: 1.5px solid var(--ink); }
+.stack-list > div { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 16px; align-items: baseline; padding: clamp(14px, 1.4vw, 22px) 0; border-bottom: 1px solid var(--line-2); }
+.stack-list dt { font-family: var(--mono); font-size: 13px; color: var(--ink-3); letter-spacing: .02em; }
+.stack-list dd { margin: 0; font-size: clamp(22px, 2.1vw, 34px); font-weight: 500; letter-spacing: -.03em; line-height: 1.15; color: var(--ink); }
+@media (max-width: 900px) { .stack-cols { grid-template-columns: minmax(0, 1fr); gap: 48px; } }
+@media (max-width: 760px) { .stack-list > div { grid-template-columns: minmax(0, 1fr); gap: 4px; } .stack-list dd { font-size: 22px; } }
 @media (prefers-reduced-motion: reduce) { .sq { transition: none; background-size: 0% 6px, 8px 5px; } .trace::before { transition: none; transform: scaleY(1); } .trace i { transition: none; opacity: 1; } }
 
 /* ---------- Systems and AI: plain labels, no switcher ---------- */
@@ -692,7 +697,6 @@ html:not(.js) .who-grid { grid-template-columns: minmax(0, 1fr); }
 .step-tag { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; font-size: 14px; font-weight: 500; color: var(--ink-2); }
 .step-tag + .step-fig { margin-top: 0; }
 
-.tools-k { flex: none; min-width: 5.5em; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); }
 
 .blk { justify-content: flex-start; }
 .blk-fig { margin-top: auto; }
@@ -707,7 +711,6 @@ html:not(.js) .who-grid { grid-template-columns: minmax(0, 1fr); }
 
 @media (max-width: 760px) {
   .step-tag { margin-bottom: 10px; }
-  .stack-rows .who-tools { flex-direction: column; gap: 6px; }
   .contact-row .btn-big { width: 100%; }
 }
 

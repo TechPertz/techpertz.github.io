@@ -25,3 +25,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# local design work
+/redesign/
+/.taste-skill/
+.DS_Store

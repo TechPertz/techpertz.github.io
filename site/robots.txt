@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://reetnandy.com/sitemap.xml
